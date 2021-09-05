@@ -62,6 +62,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:text="100%"
+        android:textAlignment="center"
         android:textColor="@color/normal_white_text"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -69,6 +70,6 @@
         app:layout_constraintEnd_toEndOf="@+id/batteryImage"
         app:layout_constraintStart_toStartOf="@+id/batteryImage"
         app:layout_constraintTop_toTopOf="@+id/batteryImage"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintVertical_bias="0.08" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

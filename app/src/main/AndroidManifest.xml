@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".waigoma.BatteryInfoActivity"
+            android:name=".waigoma.BatteryInfoFragment"
             android:exported="true" />
     </application>
 

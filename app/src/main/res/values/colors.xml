@@ -7,4 +7,20 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Customize Color Theme -->
+    <color name="dark_200">#393E46</color>
+    <color name="dark_700">#222831</color>
+    <color name="teal_600">#00ADB5</color>
+    <color name="gray_200">#EEEEEE</color>
+    <color name="white_200">#F5F5F5</color>
+    <color name="navy">#364F6B</color>
+    <color name="teal_300">#3FC1C9</color>
+    <color name="pink">#FC5185</color>
+    <color name="green_200">#29BB89</color>
+    <color name="green_400">#289672</color>
+    <color name="green_700">#1E6F5C</color>
+
+
+
 </resources>

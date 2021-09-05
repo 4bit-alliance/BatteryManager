@@ -3,24 +3,23 @@ package com.fourbitalliance.batterymanager.waigoma;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
-import android.widget.TableLayout;
+import android.view.View;
 import android.widget.TextView;
 
-import com.fourbitalliance.batterymanager.MainActivity;
 import com.fourbitalliance.batterymanager.R;
 
 public class BatteryInfo {
-    private final BatteryInfoActivity mainActivity;
-    private final TableLayout tableLayout;
+    private final View batteryInfoView;
+    private final BatteryInfoFragment batteryInfoFragment;
 
-    public BatteryInfo(BatteryInfoActivity mainActivity, TableLayout tableLayout) {
-        this.mainActivity = mainActivity;
-        this.tableLayout = tableLayout;
+    public BatteryInfo(BatteryInfoFragment batteryInfoFragment, View batteryInfoView) {
+        this.batteryInfoFragment = batteryInfoFragment;
+        this.batteryInfoView = batteryInfoView;
     }
 
     public void setText() {
         IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        Intent batteryStatus = mainActivity.registerReceiver(null, ifilter);
+        Intent batteryStatus = batteryInfoFragment.getActivity().registerReceiver(null, ifilter);
 
         // 充電中か否か
         int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
@@ -36,8 +35,8 @@ public class BatteryInfo {
     }
 
     private void setBatteryInfoText(boolean isCharging, boolean usbCharge, boolean acCharge) {
-        TextView batteryChargingText = tableLayout.findViewById(R.id.batteryChargingText);
-        TextView batterySourceText = tableLayout.findViewById(R.id.batterySourceText);
+        TextView batteryChargingText = batteryInfoView.findViewById(R.id.batteryChargingText);
+        TextView batterySourceText = batteryInfoView.findViewById(R.id.batterySourceText);
         if (isCharging) {
             batteryChargingText.setText("Charging");
             if (usbCharge) {

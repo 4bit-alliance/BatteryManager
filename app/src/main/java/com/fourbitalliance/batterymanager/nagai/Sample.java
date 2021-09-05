@@ -75,12 +75,12 @@ public class Sample extends BroadcastReceiver {
                 batteryImage.setImageResource(R.drawable.bat_20);
                 mlp.setMargins(0,400,0,0);
 
-            } else if (percentage > 10) {
-                batteryImage.setImageResource(R.drawable.bat_10);
+            } else if (percentage > 15) {
+                batteryImage.setImageResource(R.drawable.bat_15);
                 mlp.setMargins(0,500,0,0);
 
-            } else if (percentage > 5) {
-                batteryImage.setImageResource(R.drawable.bat_5);
+            } else if (percentage > 10) {
+                batteryImage.setImageResource(R.drawable.bat_10);
                 mlp.setMargins(0,600,0,0);
             } else {
                 batteryImage.setImageResource(R.drawable.bat_0);

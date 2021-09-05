@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.BatteryManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fourbitalliance.batterymanager.MainActivity;
@@ -14,6 +15,7 @@ public class Sample extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         TextView batterylevel = ((MainActivity)context).findViewById(R.id.batteryLevel);
         TextView batterystate = ((MainActivity)context).findViewById(R.id.batteryState);
+        ImageView batteryImage = ((MainActivity)context).findViewById(R.id.batteryImage);
 
         String action = intent.getAction();
 
@@ -47,6 +49,23 @@ public class Sample extends BroadcastReceiver {
             int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
             int percentage = level * 100 / scale;
             batterylevel.setText("現在" + percentage + "%");
+
+            // 画像を表示
+            if (percentage == 100) {
+                batteryImage.setImageResource(R.drawable.battery1);
+
+            } else if (percentage >= 75) {
+                batteryImage.setImageResource(R.drawable.battery2);
+
+            } else if (percentage >= 50) {
+                batteryImage.setImageResource(R.drawable.battery3);
+
+            } else if (percentage >= 20) {
+                batteryImage.setImageResource(R.drawable.battery4);
+
+            } else {
+                batteryImage.setImageResource(R.drawable.battery5);
+            }
 
         }
     }

@@ -10,15 +10,14 @@
         android:id="@+id/batteryState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="229dp"
         android:text="28h 29m remaining"
         android:textColor="@color/normal_text"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/batteryImage" />
+        app:layout_constraintTop_toBottomOf="@+id/batteryImage"
+        app:layout_constraintVertical_bias="0.04000002" />
 
     <Button
         android:id="@+id/batteryInfoButton"
@@ -34,7 +33,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="56dp"
         android:fontFamily="sans-serif-black"
         android:text="バッテリー残量"
         android:textColor="@color/title_text"
@@ -48,7 +47,7 @@
         android:id="@+id/batteryImage"
         android:layout_width="285dp"
         android:layout_height="357dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,6 +59,7 @@
         android:id="@+id/batteryLevel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:fontFamily="sans-serif"
         android:text="100%"
         android:textAlignment="center"

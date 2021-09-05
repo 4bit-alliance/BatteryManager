@@ -48,23 +48,31 @@ public class Sample extends BroadcastReceiver {
             int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
             int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
             int percentage = level * 100 / scale;
-            batterylevel.setText("現在" + percentage + "%");
+            batterylevel.setText(percentage + "%");
 
             // 画像を表示
             if (percentage == 100) {
-                batteryImage.setImageResource(R.drawable.battery1);
+                batteryImage.setImageResource(R.drawable.bat_100);
 
-            } else if (percentage >= 75) {
-                batteryImage.setImageResource(R.drawable.battery2);
+            } else if (percentage > 90) {
+                batteryImage.setImageResource(R.drawable.bat_90);
 
-            } else if (percentage >= 50) {
-                batteryImage.setImageResource(R.drawable.battery3);
+            } else if (percentage > 80) {
+                batteryImage.setImageResource(R.drawable.bat_80);
 
-            } else if (percentage >= 20) {
-                batteryImage.setImageResource(R.drawable.battery4);
+            } else if (percentage > 50) {
+                batteryImage.setImageResource(R.drawable.bat_50);
 
+            } else if (percentage > 20) {
+                batteryImage.setImageResource(R.drawable.bat_20);
+
+            } else if (percentage > 10) {
+                batteryImage.setImageResource(R.drawable.bat_10);
+
+            } else if (percentage > 5) {
+                batteryImage.setImageResource(R.drawable.bat_5);
             } else {
-                batteryImage.setImageResource(R.drawable.battery5);
+                batteryImage.setImageResource(R.drawable.bat_0);
             }
 
         }

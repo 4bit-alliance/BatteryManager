@@ -7,49 +7,68 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/batteryLevel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="500dp"
-        android:fontFamily="sans-serif"
-        android:text="TextView"
-        android:textSize="60sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/batteryState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="time limits"
-        android:textSize="24sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="229dp"
+        android:text="28h 29m remaining"
+        android:textColor="@color/normal_text"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/batteryLevel" />
-
-    <ImageView
-        android:id="@+id/batteryImage"
-        android:layout_width="200dp"
-        android:layout_height="256dp"
-        app:layout_constraintBottom_toTopOf="@+id/batteryState"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/batteryLevel"
-        app:srcCompat="@drawable/battery1" />
+        app:layout_constraintTop_toBottomOf="@+id/batteryImage" />
 
     <Button
         android:id="@+id/batteryInfoButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:text="バッテリー情報"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/batteryState" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:fontFamily="sans-serif-black"
+        android:text="バッテリー残量"
+        android:textColor="@color/title_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/batteryImage"
+        android:layout_width="285dp"
+        android:layout_height="357dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.018"
+        app:srcCompat="@drawable/bat_100" />
+
+    <TextView
+        android:id="@+id/batteryLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="100%"
+        android:textColor="@color/normal_white_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/batteryImage"
+        app:layout_constraintEnd_toEndOf="@+id/batteryImage"
+        app:layout_constraintStart_toStartOf="@+id/batteryImage"
+        app:layout_constraintTop_toTopOf="@+id/batteryImage"
+        app:layout_constraintVertical_bias="0.121" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

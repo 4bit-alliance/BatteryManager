@@ -20,6 +20,10 @@
     <color name="green_200">#29BB89</color>
     <color name="green_400">#289672</color>
     <color name="green_700">#1E6F5C</color>
+    <color name="sky_200">#F6F8FA</color>
+    <color name="title_text">#2A3048</color>
+    <color name="normal_text">#90949F</color>
+    <color name="normal_white_text">#EDF7F4</color>
 
 
 

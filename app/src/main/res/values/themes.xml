@@ -14,6 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="windowNoTitle">true</item>
         <item name="android:windowBackground">@color/sky_200</item>
+        <item name="android:fontFamily">@font/noto_sans_jp</item>
     </style>
 
     <style name="Theme.BatteryManager.launcher">

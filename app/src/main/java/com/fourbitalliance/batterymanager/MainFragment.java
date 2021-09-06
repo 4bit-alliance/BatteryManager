@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,7 +34,7 @@ public class MainFragment extends Fragment {
         // 戻るボタンを消す
 //        activity.setupBackButton(false);
 
-        Button infoBt = view.findViewById(R.id.batteryInfoButton);
+        ImageButton infoBt = view.findViewById(R.id.batteryInfoButton);
 
         // ボタンクリック時の挙動 (バッテリー情報)
         infoBt.setOnClickListener(new View.OnClickListener() {

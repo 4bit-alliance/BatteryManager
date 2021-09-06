@@ -17,6 +17,8 @@ import androidx.fragment.app.FragmentTransaction;
 import com.fourbitalliance.batterymanager.nagai.Sample;
 import com.fourbitalliance.batterymanager.waigoma.BatteryInfoFragment;
 
+import java.util.Objects;
+
 public class MainFragment extends Fragment {
     private final Sample batteryReceiver = new Sample();
     private final IntentFilter intentFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
@@ -42,10 +44,13 @@ public class MainFragment extends Fragment {
             }
         });
 
-        // onResumeの処理をここでやってみた
-        getActivity().registerReceiver(batteryReceiver, intentFilter);
-
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        requireActivity().registerReceiver(batteryReceiver, intentFilter);
     }
 
     // Fragmentを切り替えるメソッド

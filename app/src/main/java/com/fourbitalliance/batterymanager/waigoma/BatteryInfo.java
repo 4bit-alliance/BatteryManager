@@ -20,6 +20,10 @@ public class BatteryInfo {
     public void setText() {
         IntentFilter ifilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
         Intent batteryStatus = batteryInfoFragment.getActivity().registerReceiver(null, ifilter);
+        TextView batteryLevelText = batteryInfoView.findViewById(R.id.batteryLevelText);
+        int level = batteryStatus.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+        int scale = batteryStatus.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
+        batteryLevelText.setText((level * 100 / scale) + "%");
 
         // 充電中か否か
         int status = batteryStatus.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
@@ -35,8 +39,10 @@ public class BatteryInfo {
     }
 
     private void setBatteryInfoText(boolean isCharging, boolean usbCharge, boolean acCharge) {
+
         TextView batteryChargingText = batteryInfoView.findViewById(R.id.batteryChargingText);
         TextView batterySourceText = batteryInfoView.findViewById(R.id.batterySourceText);
+
         if (isCharging) {
             batteryChargingText.setText("Charging");
             if (usbCharge) {

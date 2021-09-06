@@ -17,7 +17,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.fourbitalliance.batterymanager.nagai.Sample;
 import com.fourbitalliance.batterymanager.waigoma.BatteryInfoFragment;
 
-import java.util.Objects;
 
 public class MainFragment extends Fragment {
     private final Sample batteryReceiver = new Sample();
@@ -54,8 +53,8 @@ public class MainFragment extends Fragment {
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onPause() {
+        super.onPause();
         requireActivity().unregisterReceiver(batteryReceiver);
     }
 

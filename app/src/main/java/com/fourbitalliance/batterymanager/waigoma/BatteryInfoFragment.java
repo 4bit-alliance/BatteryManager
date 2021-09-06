@@ -1,22 +1,23 @@
 package com.fourbitalliance.batterymanager.waigoma;
 
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TableLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.fourbitalliance.batterymanager.MainActivity;
 import com.fourbitalliance.batterymanager.R;
 
 public class BatteryInfoFragment extends Fragment {
-    private View rootView;
+    private final BatteryInfo batteryInfo = new BatteryInfo();
+    private final IntentFilter intentFilter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
 
     @Nullable
     @Override
@@ -32,9 +33,19 @@ public class BatteryInfoFragment extends Fragment {
         // アクションバーメニューが使えるようになる
         setHasOptionsMenu(true);
 
-        rootView = view;
-        new BatteryInfo(this, view).setText();
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        requireActivity().registerReceiver(batteryInfo, intentFilter);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        requireActivity().unregisterReceiver(batteryInfo);
     }
 
     @Override

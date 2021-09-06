@@ -61,27 +61,40 @@ public class Sample extends BroadcastReceiver {
 
             } else if (percentage > 90) {
                 batteryImage.setImageResource(R.drawable.bat_90);
-                mlp.setMargins(0, 100,0,0);
+                mlp.setMargins(0, 70,0,0);
 
             } else if (percentage > 80) {
                 batteryImage.setImageResource(R.drawable.bat_80);
-                mlp.setMargins(0,200,0,0);
+                mlp.setMargins(0,140,0,0);
+
+            } else if (percentage > 70) {
+                batteryImage.setImageResource(R.drawable.bat_70);
+                mlp.setMargins(0, 210, 0, 0);
+
+            } else if (percentage > 60) {
+                    batteryImage.setImageResource(R.drawable.bat_60);
+                    mlp.setMargins(0,280,0,0);
 
             } else if (percentage > 50) {
                 batteryImage.setImageResource(R.drawable.bat_50);
-                mlp.setMargins(0,300,0,0);
+                mlp.setMargins(0,350,0,0);
+
+            } else if (percentage > 40) {
+                batteryImage.setImageResource(R.drawable.bat_40);
+                mlp.setMargins(0, 420, 0, 0);
+
+            } else if (percentage > 30) {
+                batteryImage.setImageResource(R.drawable.bat_30);
+                mlp.setMargins(0, 490, 0, 0);
 
             } else if (percentage > 20) {
                 batteryImage.setImageResource(R.drawable.bat_20);
-                mlp.setMargins(0,400,0,0);
-
-            } else if (percentage > 15) {
-                batteryImage.setImageResource(R.drawable.bat_15);
-                mlp.setMargins(0,500,0,0);
+                mlp.setMargins(0, 560, 0, 0);
 
             } else if (percentage > 10) {
                 batteryImage.setImageResource(R.drawable.bat_10);
-                mlp.setMargins(0,600,0,0);
+                mlp.setMargins(0,630,0,0);
+
             } else {
                 batteryImage.setImageResource(R.drawable.bat_0);
                 mlp.setMargins(0,700,0,0);

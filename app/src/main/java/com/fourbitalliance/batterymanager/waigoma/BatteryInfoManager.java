@@ -4,11 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.BatteryManager;
 
-public class BatteryInfoAPI {
+public class BatteryInfoManager {
     private final Intent intent;
     private final BatteryManager batteryManager;
 
-    public BatteryInfoAPI(Context context, Intent intent) {
+    public BatteryInfoManager(Context context, Intent intent) {
         this.intent = intent;
         batteryManager = (BatteryManager) context.getSystemService(Context.BATTERY_SERVICE);
     }

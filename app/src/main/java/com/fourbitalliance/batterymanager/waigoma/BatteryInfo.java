@@ -22,7 +22,7 @@ public class BatteryInfo extends BroadcastReceiver {
         TextView batteryCapacityText = ((AppCompatActivity)context).findViewById(R.id.batteryCapacityText);
         TextView batteryRemainingText = ((AppCompatActivity)context).findViewById(R.id.batteryRemainingText);
 
-        BatteryInfoAPI batteryInfo = new BatteryInfoAPI(context, intent);
+        BatteryInfoManager batteryInfo = new BatteryInfoManager(context, intent);
 
         // バッテリー残量
         batteryLevelText.setText(batteryInfo.level() + " %");

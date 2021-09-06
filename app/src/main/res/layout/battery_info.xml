@@ -27,6 +27,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="0dp"
                 android:text="バッテリー情報"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -47,6 +49,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Level"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
                 android:textSize="16sp" />
 
             <TextView
@@ -54,6 +58,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="@color/green_700"
+                android:textColorLink="@color/green_700"
                 android:textSize="16sp" />
 
         </TableRow>
@@ -75,6 +81,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Status"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
                 android:textSize="16sp" />
 
             <TextView
@@ -82,6 +90,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="@color/green_700"
+                android:textColorLink="@color/green_700"
                 android:textSize="16sp" />
         </TableRow>
 
@@ -102,6 +112,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Source"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
                 android:textSize="16sp" />
 
             <TextView
@@ -109,6 +121,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="@color/green_700"
+                android:textColorLink="@color/green_700"
                 android:textSize="16sp" />
         </TableRow>
 
@@ -129,6 +143,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Health"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
                 android:textSize="16sp" />
 
             <TextView
@@ -136,6 +152,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="@color/green_700"
+                android:textColorLink="@color/green_700"
                 android:textSize="16sp" />
         </TableRow>
 
@@ -156,6 +174,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Technology"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
                 android:textSize="16sp" />
 
             <TextView
@@ -163,6 +183,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="@color/green_700"
+                android:textColorLink="@color/green_700"
                 android:textSize="16sp" />
         </TableRow>
 
@@ -183,6 +205,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Temperature"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
                 android:textSize="16sp" />
 
             <TextView
@@ -190,6 +214,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="@color/green_700"
+                android:textColorLink="@color/green_700"
                 android:textSize="16sp" />
         </TableRow>
 
@@ -210,6 +236,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Voltage"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
                 android:textSize="16sp" />
 
             <TextView
@@ -217,6 +245,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="@color/green_700"
+                android:textColorLink="@color/green_700"
                 android:textSize="16sp" />
         </TableRow>
 
@@ -237,6 +267,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Capacity"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
                 android:textSize="16sp" />
 
             <TextView
@@ -244,6 +276,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="@color/green_700"
+                android:textColorLink="@color/green_700"
                 android:textSize="16sp" />
         </TableRow>
 
@@ -263,6 +297,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Remaining"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
                 android:textSize="16sp" />
 
             <TextView
@@ -270,6 +306,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textColor="@color/green_700"
+                android:textColorLink="@color/green_700"
                 android:textSize="16sp" />
         </TableRow>
 

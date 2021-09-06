@@ -129,7 +129,7 @@ public class BatteryInfoAPI {
     }
 
     /**
-     * バッテリー温度を取得する
+     * バッテリー温度を取得する (単位: ℃/摂氏)
      *
      * @return int
      */
@@ -147,11 +147,25 @@ public class BatteryInfoAPI {
         return volt / 1000f;
     }
 
+    /**
+     *  バッテリー容量 (単位: mAh)
+     *  現在の容量 / 最大% * 100
+     *
+     * @return long
+     */
     public long capacity() {
-        return batteryManager.getLongProperty(BatteryManager.BATTERY_PROPERTY_CHARGE_COUNTER);
+        int percentage = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
+        percentage = percentage <= 0 ? 1 : percentage;
+        long counter = batteryManager.getLongProperty(BatteryManager.BATTERY_PROPERTY_CHARGE_COUNTER);
+        return ((counter / percentage) * 100) / 1000;
     }
 
+    /**
+     * バッテリー残量 (単位: mAh)
+     *
+     * @return long
+     */
     public long remaining() {
-        return batteryManager.getLongProperty(BatteryManager.BATTERY_PROPERTY_ENERGY_COUNTER);
+        return batteryManager.getLongProperty(BatteryManager.BATTERY_PROPERTY_CHARGE_COUNTER) / 1000;
     }
 }

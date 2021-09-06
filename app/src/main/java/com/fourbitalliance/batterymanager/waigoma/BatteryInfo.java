@@ -25,7 +25,7 @@ public class BatteryInfo extends BroadcastReceiver {
         BatteryInfoAPI batteryInfo = new BatteryInfoAPI(context, intent);
 
         // バッテリー残量
-        batteryLevelText.setText(batteryInfo.level() + "%");
+        batteryLevelText.setText(batteryInfo.level() + " %");
         // バッテリーステータス
         batteryStatusText.setText(batteryInfo.status());
         // 給電タイプ
@@ -35,12 +35,12 @@ public class BatteryInfo extends BroadcastReceiver {
         // バッテリーの種類
         batteryTechnologyText.setText(batteryInfo.technology());
         // バッテリー温度
-        batteryTemperatureText.setText(batteryInfo.temperature() + "℃");
+        batteryTemperatureText.setText(batteryInfo.temperature() + " ℃");
         // バッテリー電圧
-        batteryVoltageText.setText(batteryInfo.voltage() + "V");
+        batteryVoltageText.setText(batteryInfo.voltage() + " V");
         // バッテリー容量
-        batteryCapacityText.setText(batteryInfo.capacity() + "nAh");
+        batteryCapacityText.setText(batteryInfo.capacity() + " mAh");
         // バッテリー残量
-        batteryRemainingText.setText(batteryInfo.remaining() + "nAh");
+        batteryRemainingText.setText(batteryInfo.remaining() + " mAh");
     }
 }

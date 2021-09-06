@@ -36,17 +36,4 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        registerReceiver(batteryReceiver, intentFilter);
-//    }
-//
-//    @Override
-//    protected void onPause() {
-//        unregisterReceiver(batteryReceiver);
-//        super.onPause();
-//    }
-
-
 }

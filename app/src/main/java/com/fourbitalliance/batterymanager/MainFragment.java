@@ -53,6 +53,12 @@ public class MainFragment extends Fragment {
         requireActivity().registerReceiver(batteryReceiver, intentFilter);
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        requireActivity().unregisterReceiver(batteryReceiver);
+    }
+
     // Fragmentを切り替えるメソッド
     private void replaceFragment(Fragment fragment) {
         // FragmentManager取得

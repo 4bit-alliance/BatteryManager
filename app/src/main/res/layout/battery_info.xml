@@ -1,331 +1,340 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout
-        android:id="@+id/batteryInfoTable"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <TableRow
-            android:id="@+id/batteryInfoTitleRow"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/infoTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="0dp"
-                android:text="バッテリー情報"
-                android:textColor="?colorPrimary"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </TableRow>
+            <TableLayout
+                android:id="@+id/batteryInfoTable"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp">
 
-        <TableRow
-            android:id="@+id/batteryLevelRow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="40dp">
+                <TableRow
+                    android:id="@+id/batteryInfoTitleRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:gravity="center">
 
-            <TextView
-                android:id="@+id/batteryLevel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Level"
-                android:textColor="?colorPrimary"
-                android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/infoTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="0dp"
+                        android:text="バッテリー情報"
+                        android:textColor="?colorPrimary"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </TableRow>
 
-            <TextView
-                android:id="@+id/batteryLevelText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="?colorOnPrimary"
-                android:textSize="16sp" />
+                <TableRow
+                    android:id="@+id/batteryLevelRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="40dp">
 
-        </TableRow>
+                    <TextView
+                        android:id="@+id/batteryLevel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Level"
+                        android:textColor="?colorPrimary"
+                        android:textSize="16sp" />
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+                    <TextView
+                        android:id="@+id/batteryLevelText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="?colorOnPrimary"
+                        android:textSize="16sp" />
 
-        <TableRow
-            android:id="@+id/batteryStatusRow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+                </TableRow>
 
-            <TextView
-                android:id="@+id/batteryStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Status"
-                android:textColor="?colorPrimary"
-                android:textSize="16sp" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
 
-            <TextView
-                android:id="@+id/batteryStatusText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="?colorOnPrimary"
-                android:textSize="16sp" />
-        </TableRow>
+                <TableRow
+                    android:id="@+id/batteryStatusRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp">
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+                    <TextView
+                        android:id="@+id/batteryStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Status"
+                        android:textColor="?colorPrimary"
+                        android:textSize="16sp" />
 
-        <TableRow
-            android:id="@+id/batterySourceRow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+                    <TextView
+                        android:id="@+id/batteryStatusText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="?colorOnPrimary"
+                        android:textSize="16sp" />
+                </TableRow>
 
-            <TextView
-                android:id="@+id/batterySource"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Source"
-                android:textColor="?colorPrimary"
-                android:textSize="16sp" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
 
-            <TextView
-                android:id="@+id/batterySourceText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="?colorOnPrimary"
-                android:textSize="16sp" />
-        </TableRow>
+                <TableRow
+                    android:id="@+id/batterySourceRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp">
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+                    <TextView
+                        android:id="@+id/batterySource"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Source"
+                        android:textColor="?colorPrimary"
+                        android:textSize="16sp" />
 
-        <TableRow
-            android:id="@+id/batteryHealthRow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+                    <TextView
+                        android:id="@+id/batterySourceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="?colorOnPrimary"
+                        android:textSize="16sp" />
+                </TableRow>
 
-            <TextView
-                android:id="@+id/batteryHealth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Health"
-                android:textColor="?colorPrimary"
-                android:textSize="16sp" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
 
-            <TextView
-                android:id="@+id/batteryHealthText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="?colorOnPrimary"
-                android:textSize="16sp" />
-        </TableRow>
+                <TableRow
+                    android:id="@+id/batteryHealthRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp">
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+                    <TextView
+                        android:id="@+id/batteryHealth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Health"
+                        android:textColor="?colorPrimary"
+                        android:textSize="16sp" />
 
-        <TableRow
-            android:id="@+id/batteryTechnologyRow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+                    <TextView
+                        android:id="@+id/batteryHealthText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="?colorOnPrimary"
+                        android:textSize="16sp" />
+                </TableRow>
 
-            <TextView
-                android:id="@+id/batteryTechnology"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Technology"
-                android:textColor="?colorPrimary"
-                android:textSize="16sp" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
 
-            <TextView
-                android:id="@+id/batteryTechnologyText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="?colorOnPrimary"
-                android:textSize="16sp" />
-        </TableRow>
+                <TableRow
+                    android:id="@+id/batteryTechnologyRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp">
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+                    <TextView
+                        android:id="@+id/batteryTechnology"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Technology"
+                        android:textColor="?colorPrimary"
+                        android:textSize="16sp" />
 
-        <TableRow
-            android:id="@+id/batteryTemperatureRow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+                    <TextView
+                        android:id="@+id/batteryTechnologyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="?colorOnPrimary"
+                        android:textSize="16sp" />
+                </TableRow>
 
-            <TextView
-                android:id="@+id/batteryTemperature"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Temperature"
-                android:textColor="?colorPrimary"
-                android:textSize="16sp" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
 
-            <TextView
-                android:id="@+id/batteryTemperatureText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="?colorOnPrimary"
-                android:textSize="16sp" />
-        </TableRow>
+                <TableRow
+                    android:id="@+id/batteryTemperatureRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp">
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+                    <TextView
+                        android:id="@+id/batteryTemperature"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Temperature"
+                        android:textColor="?colorPrimary"
+                        android:textSize="16sp" />
 
-        <TableRow
-            android:id="@+id/batteryVoltageRow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+                    <TextView
+                        android:id="@+id/batteryTemperatureText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="?colorOnPrimary"
+                        android:textSize="16sp" />
+                </TableRow>
 
-            <TextView
-                android:id="@+id/batteryVoltage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Voltage"
-                android:textColor="?colorPrimary"
-                android:textSize="16sp" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
 
-            <TextView
-                android:id="@+id/batteryVoltageText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="?colorOnPrimary"
-                android:textSize="16sp" />
-        </TableRow>
+                <TableRow
+                    android:id="@+id/batteryVoltageRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp">
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+                    <TextView
+                        android:id="@+id/batteryVoltage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Voltage"
+                        android:textColor="?colorPrimary"
+                        android:textSize="16sp" />
 
-        <TableRow
-            android:id="@+id/batteryDesignCapacityRow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+                    <TextView
+                        android:id="@+id/batteryVoltageText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="?colorOnPrimary"
+                        android:textSize="16sp" />
+                </TableRow>
 
-            <TextView
-                android:id="@+id/batteryDesignCapacity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DesignCapacity"
-                android:textColor="?colorPrimary"
-                android:textSize="16sp" />
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
 
-            <TextView
-                android:id="@+id/batteryDesignCapacityText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="?colorOnPrimary"
-                android:textSize="16sp" />
-        </TableRow>
+                <TableRow
+                    android:id="@+id/batteryDesignCapacityRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp">
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
-        <TableRow
-            android:id="@+id/batteryCapacityRow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+                    <TextView
+                        android:id="@+id/batteryDesignCapacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DesignCapacity"
+                        android:textColor="?colorPrimary"
+                        android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/batteryCapacity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Capacity"
-                android:textColor="?colorPrimary"
-                android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/batteryDesignCapacityText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="?colorOnPrimary"
+                        android:textSize="16sp" />
+                </TableRow>
 
-            <TextView
-                android:id="@+id/batteryCapacityText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="?colorOnPrimary"
-                android:textSize="16sp" />
-        </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+                <TableRow
+                    android:id="@+id/batteryCapacityRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp">
 
-        <TableRow
-            android:id="@+id/batteryRemainingRow"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+                    <TextView
+                        android:id="@+id/batteryCapacity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Capacity"
+                        android:textColor="?colorPrimary"
+                        android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/batteryRemaining"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Remaining"
-                android:textColor="?colorPrimary"
-                android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/batteryCapacityText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="?colorOnPrimary"
+                        android:textSize="16sp" />
+                </TableRow>
 
-            <TextView
-                android:id="@+id/batteryRemainingText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="?colorOnPrimary"
-                android:textSize="16sp" />
-        </TableRow>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray" />
+                <TableRow
+                    android:id="@+id/batteryRemainingRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp">
 
-    </TableLayout>
+                    <TextView
+                        android:id="@+id/batteryRemaining"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Remaining"
+                        android:textColor="?colorPrimary"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/batteryRemainingText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TextView"
+                        android:textColor="?colorOnPrimary"
+                        android:textSize="16sp" />
+                </TableRow>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray" />
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

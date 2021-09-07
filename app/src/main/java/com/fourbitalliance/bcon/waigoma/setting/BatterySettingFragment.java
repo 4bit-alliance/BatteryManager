@@ -68,10 +68,10 @@ public class BatterySettingFragment extends Fragment {
         SeekBar minPercentBar = view.findViewById(R.id.min_percent_seekBar);
         SeekBar upperPercentBar = view.findViewById(R.id.upper_percent_seekBar);
         SeekBar lowerPercentBar = view.findViewById(R.id.lower_percent_seekBar);
-        TextView upperPercentText = view.findViewById(R.id.upper_percent_text);
-        TextView lowerPercentText = view.findViewById(R.id.lower_percent_text);
         TextView maxPercentText = view.findViewById(R.id.max_percent_text);
         TextView minPercentText = view.findViewById(R.id.min_percent_text);
+        TextView upperPercentText = view.findViewById(R.id.upper_percent_text);
+        TextView lowerPercentText = view.findViewById(R.id.lower_percent_text);
 
         alarmSw.setChecked(pm.getBool(PreferenceManager.Settings.ENABLE_ALARM));
         warnSw.setChecked(pm.getBool(PreferenceManager.Settings.ENABLE_WARN));
@@ -97,6 +97,10 @@ public class BatterySettingFragment extends Fragment {
         SeekBar minPercentBar = view.findViewById(R.id.min_percent_seekBar);
         SeekBar upperPercentBar = view.findViewById(R.id.upper_percent_seekBar);
         SeekBar lowerPercentBar = view.findViewById(R.id.lower_percent_seekBar);
+        TextView maxPercentText = view.findViewById(R.id.max_percent_text);
+        TextView minPercentText = view.findViewById(R.id.min_percent_text);
+        TextView upperPercentText = view.findViewById(R.id.upper_percent_text);
+        TextView lowerPercentText = view.findViewById(R.id.lower_percent_text);
 
         alarmSw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -126,7 +130,7 @@ public class BatterySettingFragment extends Fragment {
         maxPercentBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                pm.editInt(PreferenceManager.Settings.ALARM_MAX_PERCENT, progress);
+                maxPercentText.setText(progress + " %");
             }
 
             @Override
@@ -136,13 +140,13 @@ public class BatterySettingFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                pm.editInt(PreferenceManager.Settings.ALARM_MAX_PERCENT, seekBar.getProgress());
             }
         });
         minPercentBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                pm.editInt(PreferenceManager.Settings.ALARM_MIN_PERCENT, progress);
+                minPercentText.setText(progress + " %");
             }
 
             @Override
@@ -152,13 +156,13 @@ public class BatterySettingFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                pm.editInt(PreferenceManager.Settings.ALARM_MIN_PERCENT, seekBar.getProgress());
             }
         });
         upperPercentBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                pm.editInt(PreferenceManager.Settings.WARN_MAX_PERCENT, progress);
+                upperPercentText.setText(progress + " %");
             }
 
             @Override
@@ -168,13 +172,13 @@ public class BatterySettingFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                pm.editInt(PreferenceManager.Settings.WARN_MAX_PERCENT, seekBar.getProgress());
             }
         });
         lowerPercentBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                pm.editInt(PreferenceManager.Settings.WARN_MIN_PERCENT, progress);
+                lowerPercentText.setText(progress + " %");
             }
 
             @Override
@@ -184,7 +188,7 @@ public class BatterySettingFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                pm.editInt(PreferenceManager.Settings.WARN_MIN_PERCENT, seekBar.getProgress());
             }
         });
     }

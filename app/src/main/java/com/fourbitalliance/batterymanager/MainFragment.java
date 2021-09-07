@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
@@ -16,7 +15,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.fourbitalliance.batterymanager.nagai.Sample;
-import com.fourbitalliance.batterymanager.waigoma.BatteryInfoFragment;
+import com.fourbitalliance.batterymanager.waigoma.info.BatteryInfoFragment;
+import com.fourbitalliance.batterymanager.waigoma.setting.BatterySettingFragment;
 
 
 public class MainFragment extends Fragment {
@@ -35,12 +35,20 @@ public class MainFragment extends Fragment {
 //        activity.setupBackButton(false);
 
         ImageButton infoBt = view.findViewById(R.id.batteryInfoButton);
+        ImageButton settingBt = view.findViewById(R.id.batterySettingButton);
 
         // ボタンクリック時の挙動 (バッテリー情報)
         infoBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 replaceFragment(new BatteryInfoFragment());
+            }
+        });
+
+        settingBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new BatterySettingFragment());
             }
         });
 

@@ -39,7 +39,7 @@
                     android:layout_marginTop="56dp"
                     android:fontFamily="@font/noto_sans_jp_bold"
                     android:gravity="center|center_vertical"
-                    android:text="設定"
+                    android:text="バッテリー情報"
                     android:textColor="?colorPrimary"
                     android:textSize="16sp" />
             </FrameLayout>

@@ -1,4 +1,4 @@
-package com.fourbitalliance.batterymanager;
+package com.fourbitalliance.bcon;
 
 import android.content.Context;
 

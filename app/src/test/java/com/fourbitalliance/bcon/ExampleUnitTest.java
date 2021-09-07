@@ -1,4 +1,4 @@
-package com.fourbitalliance.batterymanager;
+package com.fourbitalliance.bcon;
 
 import org.junit.Test;
 

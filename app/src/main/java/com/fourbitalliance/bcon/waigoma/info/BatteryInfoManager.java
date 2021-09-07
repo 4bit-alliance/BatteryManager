@@ -1,10 +1,10 @@
-package com.fourbitalliance.batterymanager.waigoma.info;
+package com.fourbitalliance.bcon.waigoma.info;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.BatteryManager;
 
-import com.fourbitalliance.batterymanager.MyApplication;
+import com.fourbitalliance.bcon.MyApplication;
 
 public class BatteryInfoManager {
     private final Intent intent;

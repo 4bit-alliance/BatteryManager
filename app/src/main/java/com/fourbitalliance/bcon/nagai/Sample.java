@@ -1,4 +1,4 @@
-package com.fourbitalliance.batterymanager.nagai;
+package com.fourbitalliance.bcon.nagai;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.fourbitalliance.batterymanager.MainActivity;
-import com.fourbitalliance.batterymanager.R;
+import com.fourbitalliance.bcon.MainActivity;
+import com.fourbitalliance.bcon.R;
 
 public class Sample extends BroadcastReceiver {
     @Override

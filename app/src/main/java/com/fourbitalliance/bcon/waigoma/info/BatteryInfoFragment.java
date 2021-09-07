@@ -1,4 +1,4 @@
-package com.fourbitalliance.batterymanager.waigoma.info;
+package com.fourbitalliance.bcon.waigoma.info;
 
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -12,8 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.fourbitalliance.batterymanager.MainActivity;
-import com.fourbitalliance.batterymanager.R;
+import com.fourbitalliance.bcon.MainActivity;
+import com.fourbitalliance.bcon.R;
 
 public class BatteryInfoFragment extends Fragment {
     private final BatteryInfo batteryInfo = new BatteryInfo();

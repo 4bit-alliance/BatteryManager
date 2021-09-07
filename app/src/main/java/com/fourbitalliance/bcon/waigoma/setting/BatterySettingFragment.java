@@ -1,4 +1,4 @@
-package com.fourbitalliance.batterymanager.waigoma.setting;
+package com.fourbitalliance.bcon.waigoma.setting;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,9 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.fourbitalliance.batterymanager.MainActivity;
-import com.fourbitalliance.batterymanager.R;
-import com.fourbitalliance.batterymanager.waigoma.PreferenceManager;
+import com.fourbitalliance.bcon.MainActivity;
+import com.fourbitalliance.bcon.R;
+import com.fourbitalliance.bcon.waigoma.PreferenceManager;
 
 public class BatterySettingFragment extends Fragment {
     @Nullable

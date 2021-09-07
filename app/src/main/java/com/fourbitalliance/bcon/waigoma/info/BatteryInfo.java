@@ -1,4 +1,4 @@
-package com.fourbitalliance.batterymanager.waigoma.info;
+package com.fourbitalliance.bcon.waigoma.info;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.fourbitalliance.batterymanager.R;
+import com.fourbitalliance.bcon.R;
 
 public class BatteryInfo extends BroadcastReceiver {
     @Override

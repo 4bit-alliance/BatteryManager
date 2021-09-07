@@ -1,4 +1,4 @@
-package com.fourbitalliance.batterymanager;
+package com.fourbitalliance.bcon;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-import com.fourbitalliance.batterymanager.waigoma.PreferenceManager;
+import com.fourbitalliance.bcon.waigoma.PreferenceManager;
 
 public class MainActivity extends AppCompatActivity {
     @Override

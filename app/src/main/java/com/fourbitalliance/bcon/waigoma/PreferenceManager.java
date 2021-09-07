@@ -1,9 +1,9 @@
-package com.fourbitalliance.batterymanager.waigoma;
+package com.fourbitalliance.bcon.waigoma;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.fourbitalliance.batterymanager.MyApplication;
+import com.fourbitalliance.bcon.MyApplication;
 
 public class PreferenceManager {
     private final SharedPreferences pref;

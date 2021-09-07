@@ -1,4 +1,4 @@
-package com.fourbitalliance.batterymanager;
+package com.fourbitalliance.bcon;
 
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -14,9 +14,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.fourbitalliance.batterymanager.nagai.Sample;
-import com.fourbitalliance.batterymanager.waigoma.info.BatteryInfoFragment;
-import com.fourbitalliance.batterymanager.waigoma.setting.BatterySettingFragment;
+import com.fourbitalliance.bcon.nagai.Sample;
+import com.fourbitalliance.bcon.waigoma.info.BatteryInfoFragment;
+import com.fourbitalliance.bcon.waigoma.setting.BatterySettingFragment;
 
 
 public class MainFragment extends Fragment {

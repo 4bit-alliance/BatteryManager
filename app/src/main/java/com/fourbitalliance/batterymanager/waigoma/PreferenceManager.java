@@ -3,11 +3,28 @@ package com.fourbitalliance.batterymanager.waigoma;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.fourbitalliance.batterymanager.MyApplication;
+
 public class PreferenceManager {
     private final SharedPreferences pref;
 
-    public PreferenceManager(String fileName, Context context) {
-        this.pref = context.getSharedPreferences(fileName, Context.MODE_PRIVATE);
+    public PreferenceManager(String fileName) {
+        this.pref = MyApplication.getInstance().getSharedPreferences(fileName, Context.MODE_PRIVATE);
+    }
+
+    public void setup() {
+        if (pref.contains(Settings.INITIALIZE)) return;
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean(Settings.INITIALIZE, true);
+        editor.putBoolean(Settings.ENABLE_ALARM, true);
+        editor.putBoolean(Settings.ENABLE_WARN, true);
+        editor.putInt(Settings.ALARM_MAX_PERCENT, 100);
+        editor.putInt(Settings.ALARM_MIN_PERCENT, 0);
+        editor.putInt(Settings.WARN_MAX_PERCENT, 95);
+        editor.putInt(Settings.WARN_MIN_PERCENT, 5);
+        editor.putBoolean(Settings.DARK_MODE, false);
+        editor.putBoolean(Settings.BACKGROUND, false);
+        editor.apply();
     }
 
     public void editStr(String key, String value) {
@@ -44,4 +61,16 @@ public class PreferenceManager {
         return pref.contains(key);
     }
 
+    public static class Settings {
+        public final static String FILE = "bcon_settings";
+        public final static String INITIALIZE = "initialize";
+        public final static String ENABLE_ALARM = "enable_alarm";
+        public final static String ENABLE_WARN = "enable_warn";
+        public final static String ALARM_MAX_PERCENT = "alarm_max_percent";
+        public final static String ALARM_MIN_PERCENT = "alarm_min_percent";
+        public final static String WARN_MAX_PERCENT = "warn_max_percent";
+        public final static String WARN_MIN_PERCENT = "warn_min_percent";
+        public final static String DARK_MODE = "dark_mode";
+        public final static String BACKGROUND = "background";
+    }
 }

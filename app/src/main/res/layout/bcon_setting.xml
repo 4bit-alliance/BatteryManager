@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:id="@+id/batterySettingTable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:id="@+id/batterySettingTitleRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/SettingTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="0dp"
+                android:gravity="center"
+                android:text="設定"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/switchAlarmRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center">
+
+            <Switch
+                android:id="@+id/switch_alarm"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="アラーム" />
+
+            <Switch
+                android:id="@+id/switch_warn"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="通知" />
+
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+        <TableRow
+            android:id="@+id/percent_alarm_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp">
+
+            <TextView
+                android:id="@+id/percent_alarm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="警告"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
+                android:textSize="16sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/max_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="最大%"
+                        android:textColor="@color/green_700"
+                        android:textColorLink="@color/green_700"
+                        android:textSize="16sp" />
+
+                    <SeekBar
+                        android:id="@+id/max_percent_seekBar"
+                        android:layout_width="128dp"
+                        android:layout_height="match_parent"
+                        android:max="100"/>
+
+                    <TextView
+                        android:id="@+id/max_percent_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="100 %"
+                        android:textColor="@color/green_700"
+                        android:textColorLink="@color/dark_700"
+                        android:textSize="16sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/min_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="最小%"
+                        android:textColor="@color/green_700"
+                        android:textColorLink="@color/green_700"
+                        android:textSize="16sp" />
+
+                    <SeekBar
+                        android:id="@+id/min_percent_seekBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:max="100"/>
+
+                    <TextView
+                        android:id="@+id/min_percent_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0 %"
+                        android:textColor="@color/green_700"
+                        android:textColorLink="@color/dark_700"
+                        android:textSize="16sp" />
+                </TableRow>
+
+            </TableLayout>
+
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+        <TableRow
+            android:id="@+id/percent_warn_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp">
+
+            <TextView
+                android:id="@+id/percent_warn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="通知"
+                android:textColor="@color/dark_700"
+                android:textColorLink="@color/dark_700"
+                android:textSize="16sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/upper_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="最大%"
+                        android:textColor="@color/green_700"
+                        android:textColorLink="@color/green_700"
+                        android:textSize="16sp" />
+
+                    <SeekBar
+                        android:id="@+id/upper_percent_seekBar"
+                        android:layout_width="128dp"
+                        android:layout_height="match_parent"
+                        android:max="100"/>
+
+                    <TextView
+                        android:id="@+id/upper_percent_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="95 %"
+                        android:textColor="@color/green_700"
+                        android:textColorLink="@color/dark_700"
+                        android:textSize="16sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/lower_percent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="最小%"
+                        android:textColor="@color/green_700"
+                        android:textColorLink="@color/green_700"
+                        android:textSize="16sp" />
+
+                    <SeekBar
+                        android:id="@+id/lower_percent_seekBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:max="100"/>
+
+                    <TextView
+                        android:id="@+id/lower_percent_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="5 %"
+                        android:textColor="@color/green_700"
+                        android:textColorLink="@color/dark_700"
+                        android:textSize="16sp" />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+        <TableRow
+            android:id="@+id/batteryHealthRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp">
+
+            <Switch
+                android:id="@+id/switch_darkmode"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="ダークモード" />
+
+            <Switch
+                android:id="@+id/switch_background"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="バックグラウンド" />
+
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

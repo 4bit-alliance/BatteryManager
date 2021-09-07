@@ -62,16 +62,16 @@ public class BatterySettingFragment extends Fragment {
         PreferenceManager pm = new PreferenceManager(PreferenceManager.Settings.FILE);
         Switch alarmSw = view.findViewById(R.id.switch_alarm);
         Switch warnSw = view.findViewById(R.id.switch_warn);
+        Switch darkModeSw = view.findViewById(R.id.switch_darkmode);
+        Switch backgroundSw = view.findViewById(R.id.switch_background);
         SeekBar maxPercentBar = view.findViewById(R.id.max_percent_seekBar);
         SeekBar minPercentBar = view.findViewById(R.id.min_percent_seekBar);
-        TextView maxPercentText = view.findViewById(R.id.max_percent_text);
-        TextView minPercentText = view.findViewById(R.id.min_percent_text);
         SeekBar upperPercentBar = view.findViewById(R.id.upper_percent_seekBar);
         SeekBar lowerPercentBar = view.findViewById(R.id.lower_percent_seekBar);
         TextView upperPercentText = view.findViewById(R.id.upper_percent_text);
         TextView lowerPercentText = view.findViewById(R.id.lower_percent_text);
-        Switch darkModeSw = view.findViewById(R.id.switch_darkmode);
-        Switch backgroundSw = view.findViewById(R.id.switch_background);
+        TextView maxPercentText = view.findViewById(R.id.max_percent_text);
+        TextView minPercentText = view.findViewById(R.id.min_percent_text);
 
         alarmSw.setChecked(pm.getBool(PreferenceManager.Settings.ENABLE_ALARM));
         warnSw.setChecked(pm.getBool(PreferenceManager.Settings.ENABLE_WARN));
@@ -84,7 +84,7 @@ public class BatterySettingFragment extends Fragment {
         maxPercentText.setText(pm.getInt(PreferenceManager.Settings.ALARM_MAX_PERCENT) + " %");
         minPercentText.setText(pm.getInt(PreferenceManager.Settings.ALARM_MIN_PERCENT) + " %");
         upperPercentText.setText(pm.getInt(PreferenceManager.Settings.WARN_MAX_PERCENT) + " %");
-        lowerPercentText.setText(pm.getInt(PreferenceManager.Settings.WARN_MAX_PERCENT) + " %");
+        lowerPercentText.setText(pm.getInt(PreferenceManager.Settings.WARN_MIN_PERCENT) + " %");
     }
 
     public void setListener(View view) {

@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -84,10 +85,10 @@ public class BatterySettingFragment extends Fragment {
         minPercentBar.setProgress(pm.getInt(PreferenceManager.Settings.ALARM_MIN_PERCENT));
         upperPercentBar.setProgress(pm.getInt(PreferenceManager.Settings.WARN_MAX_PERCENT));
         lowerPercentBar.setProgress(pm.getInt(PreferenceManager.Settings.WARN_MIN_PERCENT));
-        maxPercentText.setText(pm.getInt(PreferenceManager.Settings.ALARM_MAX_PERCENT) + " %");
-        minPercentText.setText(pm.getInt(PreferenceManager.Settings.ALARM_MIN_PERCENT) + " %");
-        upperPercentText.setText(pm.getInt(PreferenceManager.Settings.WARN_MAX_PERCENT) + " %");
-        lowerPercentText.setText(pm.getInt(PreferenceManager.Settings.WARN_MIN_PERCENT) + " %");
+        maxPercentText.setText(String.valueOf(pm.getInt(PreferenceManager.Settings.ALARM_MAX_PERCENT)));
+        minPercentText.setText(String.valueOf(pm.getInt(PreferenceManager.Settings.ALARM_MIN_PERCENT)));
+        upperPercentText.setText(String.valueOf(pm.getInt(PreferenceManager.Settings.WARN_MAX_PERCENT)));
+        lowerPercentText.setText(String.valueOf(pm.getInt(PreferenceManager.Settings.WARN_MIN_PERCENT)));
     }
 
     public void setListener(View view) {
@@ -104,6 +105,7 @@ public class BatterySettingFragment extends Fragment {
         TextView minPercentText = view.findViewById(R.id.min_percent_text);
         TextView upperPercentText = view.findViewById(R.id.upper_percent_text);
         TextView lowerPercentText = view.findViewById(R.id.lower_percent_text);
+        ImageButton backButton = view.findViewById(R.id.backButton);
 
         alarmSw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -134,7 +136,7 @@ public class BatterySettingFragment extends Fragment {
         maxPercentBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                maxPercentText.setText(progress + " %");
+                maxPercentText.setText(String.valueOf(progress));
             }
 
             @Override
@@ -150,7 +152,7 @@ public class BatterySettingFragment extends Fragment {
         minPercentBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                minPercentText.setText(progress + " %");
+                minPercentText.setText(String.valueOf(progress));
             }
 
             @Override
@@ -166,7 +168,7 @@ public class BatterySettingFragment extends Fragment {
         upperPercentBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                upperPercentText.setText(progress + " %");
+                upperPercentText.setText(String.valueOf(progress));
             }
 
             @Override
@@ -182,7 +184,7 @@ public class BatterySettingFragment extends Fragment {
         lowerPercentBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                lowerPercentText.setText(progress + " %");
+                lowerPercentText.setText(String.valueOf(progress));
             }
 
             @Override
@@ -193,6 +195,13 @@ public class BatterySettingFragment extends Fragment {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 pm.editInt(PreferenceManager.Settings.WARN_MIN_PERCENT, seekBar.getProgress());
+            }
+        });
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getParentFragmentManager().popBackStack();
             }
         });
     }

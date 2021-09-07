@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.BatteryManager" parent="Theme.AppCompat.DayNight">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/dark_normal_text</item>
+        <item name="colorPrimary">@color/dark_title_text</item>
         <item name="colorPrimaryVariant">@color/green_700</item>
         <item name="colorOnPrimary">@color/green_200</item>
         <!-- Secondary brand color. -->
@@ -13,7 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="windowNoTitle">true</item>
-        <item name="android:windowBackground">@color/dark_700</item>
+        <item name="android:windowBackground">@color/dark_600</item>
         <item name="android:fontFamily">@font/noto_sans_jp</item>
     </style>
 

@@ -155,7 +155,7 @@ public class BatteryInfoManager {
      *
      * @return long
      */
-    public double capacity() {
+    public int designCapacity() {
         Object mPowerProfile;
         double batteryCapacity = 0;
         final String POWER_PROFILE_CLASS = "com.android.internal.os.PowerProfile";
@@ -174,7 +174,14 @@ public class BatteryInfoManager {
             e.printStackTrace();
         }
 
-        return batteryCapacity;
+        return (int) batteryCapacity;
+    }
+
+    public long maxCapacity() {
+        int percentage = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
+        percentage = percentage <= 0 ? 1 : percentage;
+        long counter = batteryManager.getLongProperty(BatteryManager.BATTERY_PROPERTY_CHARGE_COUNTER);
+        return ((counter / percentage) * 100) / 1000;
     }
 
     /**

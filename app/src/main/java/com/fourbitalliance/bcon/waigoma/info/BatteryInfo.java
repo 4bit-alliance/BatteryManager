@@ -19,6 +19,7 @@ public class BatteryInfo extends BroadcastReceiver {
         TextView batteryTechnologyText = ((AppCompatActivity)context).findViewById(R.id.batteryTechnologyText);
         TextView batteryTemperatureText = ((AppCompatActivity)context).findViewById(R.id.batteryTemperatureText);
         TextView batteryVoltageText = ((AppCompatActivity)context).findViewById(R.id.batteryVoltageText);
+        TextView batteryDesignCapacityText = ((AppCompatActivity)context).findViewById(R.id.batteryDesignCapacityText);
         TextView batteryCapacityText = ((AppCompatActivity)context).findViewById(R.id.batteryCapacityText);
         TextView batteryRemainingText = ((AppCompatActivity)context).findViewById(R.id.batteryRemainingText);
 
@@ -38,8 +39,10 @@ public class BatteryInfo extends BroadcastReceiver {
         batteryTemperatureText.setText(batteryInfo.temperature() + " ℃");
         // バッテリー電圧
         batteryVoltageText.setText(batteryInfo.voltage() + " V");
+        // バッテリーデザイン容量
+        batteryDesignCapacityText.setText(batteryInfo.designCapacity() + " mAh");
         // バッテリー容量
-        batteryCapacityText.setText(batteryInfo.capacity() + " mAh");
+        batteryCapacityText.setText(batteryInfo.maxCapacity() + " mAh");
         // バッテリー残量
         batteryRemainingText.setText(batteryInfo.remaining() + " mAh");
     }

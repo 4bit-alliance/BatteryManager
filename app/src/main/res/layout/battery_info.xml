@@ -241,6 +241,34 @@
             android:background="@android:color/darker_gray" />
 
         <TableRow
+            android:id="@+id/batteryDesignCapacityRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp">
+
+            <TextView
+                android:id="@+id/batteryDesignCapacity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DesignCapacity"
+                android:textColor="?colorPrimary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/batteryDesignCapacityText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textColor="?colorOnPrimary"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+        <TableRow
             android:id="@+id/batteryCapacityRow"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -268,6 +296,7 @@
             android:layout_width="fill_parent"
             android:layout_height="1dp"
             android:background="@android:color/darker_gray" />
+
         <TableRow
             android:id="@+id/batteryRemainingRow"
             android:layout_width="match_parent"

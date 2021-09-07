@@ -192,7 +192,7 @@
 
                     <TextView
                         android:id="@+id/batteryTechnologyText"
-                        android:layout_width="wrap_content"
+                        android:layout_width="158dp"
                         android:layout_height="wrap_content"
                         android:gravity="right"
                         android:paddingRight="16dp"

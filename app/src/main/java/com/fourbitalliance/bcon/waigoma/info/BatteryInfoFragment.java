@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -33,6 +34,8 @@ public class BatteryInfoFragment extends Fragment {
         // アクションバーメニューが使えるようになる
         setHasOptionsMenu(true);
 
+        setListener(view);
+
         return view;
     }
 
@@ -55,5 +58,16 @@ public class BatteryInfoFragment extends Fragment {
         // 遷移前に表示していたFragmentに戻る
         getParentFragmentManager().popBackStack();
         return true;
+    }
+
+    public void setListener(View view) {
+        ImageButton backButton = view.findViewById(R.id.backButton2);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getParentFragmentManager().popBackStack();
+            }
+        });
     }
 }

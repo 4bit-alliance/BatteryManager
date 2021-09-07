@@ -13,8 +13,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.fourbitalliance.bcon.MainActivity;
+import com.fourbitalliance.bcon.MainFragment;
 import com.fourbitalliance.bcon.R;
 import com.fourbitalliance.bcon.waigoma.PreferenceManager;
 
@@ -118,6 +121,7 @@ public class BatterySettingFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 pm.editBool(PreferenceManager.Settings.DARK_MODE, darkModeSw.isChecked());
+                new ChangeTheme().setTheme();
             }
         });
         backgroundSw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

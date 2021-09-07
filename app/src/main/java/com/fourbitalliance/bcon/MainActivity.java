@@ -1,10 +1,12 @@
 package com.fourbitalliance.bcon;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import com.fourbitalliance.bcon.waigoma.PreferenceManager;
@@ -16,11 +18,8 @@ public class MainActivity extends AppCompatActivity {
         setTheme(R.style.Theme_BatteryManager);
         setContentView(R.layout.activity_main);
 
-        // 初期設定
-        new PreferenceManager(PreferenceManager.Settings.FILE).setup();
-
         // MainFragment表示
-        addFragment(new MainFragment());
+        if (!isDupFragment()) addFragment(new MainFragment());
     }
 
     // TODO 戻るボタンを実装したい
@@ -28,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
 //        ActionBar actionBar = getSupportActionBar();
 //        actionBar.setDisplayHomeAsUpEnabled(enableBackButton);
 //    }
+
+    // Fragmentが重ならない努力 (ダークモード切替)
+    private boolean isDupFragment() {
+        FragmentManager manager = getSupportFragmentManager();
+        return manager.getFragments().size() > 0;
+    }
 
     // Fragmentを表示させるメソッド定義 (表示したいの引数へ)
     private void addFragment(Fragment fragment) {

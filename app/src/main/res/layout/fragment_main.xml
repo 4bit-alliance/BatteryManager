@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_main"
     tools:context=".MainActivity">
 
     <TextView
@@ -27,7 +28,7 @@
         android:layout_marginTop="56dp"
         android:fontFamily="@font/noto_sans_jp_bold"
         android:text="バッテリー残量"
-        android:textColor="@color/title_text"
+        android:textColor="?colorPrimary"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

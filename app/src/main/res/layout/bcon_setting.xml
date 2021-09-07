@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/bcon">
 
     <TableLayout
         android:id="@+id/batterySettingTable"
@@ -29,7 +30,7 @@
                 android:layout_marginEnd="0dp"
                 android:gravity="center"
                 android:text="設定"
-                android:textColor="@color/dark_700"
+                android:textColor="?colorPrimary"
                 android:textColorLink="@color/dark_700"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -51,13 +52,15 @@
                 android:id="@+id/switch_alarm"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:text="アラーム" />
+                android:text="アラーム"
+                android:textColor="?colorPrimary" />
 
             <Switch
                 android:id="@+id/switch_warn"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:text="通知" />
+                android:text="通知"
+                android:textColor="?colorPrimary" />
 
         </TableRow>
 
@@ -79,7 +82,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="警告"
-                android:textColor="@color/dark_700"
+                android:textColor="?colorPrimary"
                 android:textColorLink="@color/dark_700"
                 android:textSize="16sp" />
 
@@ -96,7 +99,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="最大%"
-                        android:textColor="@color/green_700"
+                        android:textColor="?colorPrimary"
                         android:textColorLink="@color/green_700"
                         android:textSize="16sp" />
 
@@ -112,8 +115,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="100 %"
-                        android:textColor="@color/green_700"
-                        android:textColorLink="@color/dark_700"
+                        android:textColor="?colorOnPrimary"
                         android:textSize="16sp" />
 
                 </TableRow>
@@ -127,7 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="最小%"
-                        android:textColor="@color/green_700"
+                        android:textColor="?colorPrimary"
                         android:textColorLink="@color/green_700"
                         android:textSize="16sp" />
 
@@ -143,8 +145,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="0 %"
-                        android:textColor="@color/green_700"
-                        android:textColorLink="@color/dark_700"
+                        android:textColor="?colorOnPrimary"
                         android:textSize="16sp" />
                 </TableRow>
 
@@ -170,7 +171,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="通知"
-                android:textColor="@color/dark_700"
+                android:textColor="?colorPrimary"
                 android:textColorLink="@color/dark_700"
                 android:textSize="16sp" />
 
@@ -187,7 +188,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="最大%"
-                        android:textColor="@color/green_700"
+                        android:textColor="?colorPrimary"
                         android:textColorLink="@color/green_700"
                         android:textSize="16sp" />
 
@@ -203,8 +204,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="95 %"
-                        android:textColor="@color/green_700"
-                        android:textColorLink="@color/dark_700"
+                        android:textColor="?colorOnPrimary"
                         android:textSize="16sp" />
 
                 </TableRow>
@@ -218,7 +218,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="最小%"
-                        android:textColor="@color/green_700"
+                        android:textColor="?colorPrimary"
                         android:textColorLink="@color/green_700"
                         android:textSize="16sp" />
 
@@ -234,8 +234,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="5 %"
-                        android:textColor="@color/green_700"
-                        android:textColorLink="@color/dark_700"
+                        android:textColor="?colorOnPrimary"
                         android:textSize="16sp" />
 
                 </TableRow>
@@ -260,13 +259,15 @@
                 android:id="@+id/switch_darkmode"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:text="ダークモード" />
+                android:text="ダークモード"
+                android:textColor="?colorPrimary" />
 
             <Switch
                 android:id="@+id/switch_background"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
-                android:text="バックグラウンド" />
+                android:text="バックグラウンド"
+                android:textColor="?colorPrimary" />
 
         </TableRow>
 

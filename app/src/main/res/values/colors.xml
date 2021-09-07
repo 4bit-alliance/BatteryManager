@@ -25,6 +25,8 @@
     <color name="normal_text">#90949F</color>
     <color name="normal_white_text">#EDF7F4</color>
 
+    <color name="dark_normal_text">#FDFDFD</color>
+
 
 
 </resources>

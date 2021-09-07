@@ -1,4 +1,4 @@
-package com.fourbitalliance.batterymanager.waigoma;
+package com.fourbitalliance.batterymanager.waigoma.info;
 
 import android.content.Intent;
 import android.content.IntentFilter;

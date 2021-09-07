@@ -1,4 +1,4 @@
-package com.fourbitalliance.batterymanager.waigoma;
+package com.fourbitalliance.batterymanager.waigoma.info;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -22,7 +22,7 @@ public class BatteryInfo extends BroadcastReceiver {
         TextView batteryCapacityText = ((AppCompatActivity)context).findViewById(R.id.batteryCapacityText);
         TextView batteryRemainingText = ((AppCompatActivity)context).findViewById(R.id.batteryRemainingText);
 
-        BatteryInfoManager batteryInfo = new BatteryInfoManager(context, intent);
+        BatteryInfoManager batteryInfo = new BatteryInfoManager(intent);
 
         // バッテリー残量
         batteryLevelText.setText(batteryInfo.level() + " %");

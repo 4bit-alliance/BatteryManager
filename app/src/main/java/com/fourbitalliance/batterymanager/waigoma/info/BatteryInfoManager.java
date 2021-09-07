@@ -1,16 +1,18 @@
-package com.fourbitalliance.batterymanager.waigoma;
+package com.fourbitalliance.batterymanager.waigoma.info;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.BatteryManager;
 
+import com.fourbitalliance.batterymanager.MyApplication;
+
 public class BatteryInfoManager {
     private final Intent intent;
     private final BatteryManager batteryManager;
 
-    public BatteryInfoManager(Context context, Intent intent) {
+    public BatteryInfoManager(Intent intent) {
         this.intent = intent;
-        batteryManager = (BatteryManager) context.getSystemService(Context.BATTERY_SERVICE);
+        batteryManager = (BatteryManager) MyApplication.getInstance().getSystemService(Context.BATTERY_SERVICE);
     }
 
     /**

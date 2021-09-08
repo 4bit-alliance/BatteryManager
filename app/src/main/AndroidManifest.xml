@@ -13,7 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BatteryManager"
         android:name=".MyApplication">
-        <!-- android:theme="@style/Theme.BatteryManager.launcher" >-->
         <service
             android:name=".waigoma.service.MainService"
             />

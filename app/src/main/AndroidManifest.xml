@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fourbitalliance.bcon">
 
+    <!-- API 26 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/app_icon"
@@ -11,6 +14,9 @@
         android:theme="@style/Theme.BatteryManager"
         android:name=".MyApplication">
         <!-- android:theme="@style/Theme.BatteryManager.launcher" >-->
+        <service
+            android:name=".waigoma.service.MainService"
+            />
 
         <activity
             android:name=".MainActivity"

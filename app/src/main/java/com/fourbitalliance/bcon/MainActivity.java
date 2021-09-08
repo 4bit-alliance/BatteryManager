@@ -5,14 +5,24 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
+import com.fourbitalliance.bcon.waigoma.PreferenceManager;
+import com.fourbitalliance.bcon.waigoma.service.BackgroundManager;
+import com.fourbitalliance.bcon.waigoma.service.MainService;
+
 public class MainActivity extends AppCompatActivity {
+    private static MainActivity instance = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.Theme_BatteryManager);
         setContentView(R.layout.activity_main);
+
+        instance = this;
 
         // MainFragment表示
         if (!isDupFragment()) addFragment(new MainFragment());
@@ -36,4 +46,7 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
+    public static MainActivity getInstance() {
+        return instance;
+    }
 }

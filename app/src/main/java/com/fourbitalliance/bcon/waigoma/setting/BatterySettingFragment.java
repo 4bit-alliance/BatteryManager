@@ -15,8 +15,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.fourbitalliance.bcon.MainActivity;
 import com.fourbitalliance.bcon.R;
 import com.fourbitalliance.bcon.waigoma.PreferenceManager;
+import com.fourbitalliance.bcon.waigoma.service.BackgroundManager;
 
 public class BatterySettingFragment extends Fragment {
     @Nullable
@@ -121,6 +123,9 @@ public class BatterySettingFragment extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 pm.editBool(PreferenceManager.Settings.BACKGROUND, backgroundSw.isChecked());
+                BackgroundManager bm = new BackgroundManager();
+                if (isChecked) bm.enable(MainActivity.getInstance());
+                else bm.disable(MainActivity.getInstance());
             }
         });
 

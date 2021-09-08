@@ -43,7 +43,7 @@ public class MainService extends Service {
             notificationManager.createNotificationChannel(channel);
 
             Notification notification = new Notification.Builder(context, channelId)
-                    .setSmallIcon(R.drawable.splash_mini_icon)
+                    .setSmallIcon(R.drawable.notification_icon)
                     .setContentText("Background稼働中")
                     .setAutoCancel(true)
                     .setContentIntent(pendingIntent)

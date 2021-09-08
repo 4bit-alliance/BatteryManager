@@ -150,10 +150,9 @@ public class BatteryInfoManager {
     }
 
     /**
-     *  バッテリー容量 (単位: mAh)
-     *  現在の容量 / 最大% * 100
+     *  バッテリーデザイン容量 (単位: mAh)
      *
-     * @return long
+     * @return int
      */
     public int designCapacity() {
         Object mPowerProfile;
@@ -177,6 +176,12 @@ public class BatteryInfoManager {
         return (int) batteryCapacity;
     }
 
+    /**
+     * バッテリー最大容量
+     * 現在の容量 / 最大% * 100
+     *
+     * @return long
+     */
     public long maxCapacity() {
         int percentage = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY);
         percentage = percentage <= 0 ? 1 : percentage;

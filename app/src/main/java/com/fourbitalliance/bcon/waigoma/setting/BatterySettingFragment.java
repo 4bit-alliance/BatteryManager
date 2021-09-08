@@ -76,10 +76,10 @@ public class BatterySettingFragment extends Fragment {
         minPercentBar.setProgress(pm.getInt(PreferenceManager.Settings.ALARM_MIN_PERCENT));
         upperPercentBar.setProgress(pm.getInt(PreferenceManager.Settings.WARN_MAX_PERCENT));
         lowerPercentBar.setProgress(pm.getInt(PreferenceManager.Settings.WARN_MIN_PERCENT));
-        maxPercentText.setText(String.valueOf(pm.getInt(PreferenceManager.Settings.ALARM_MAX_PERCENT)));
-        minPercentText.setText(String.valueOf(pm.getInt(PreferenceManager.Settings.ALARM_MIN_PERCENT)));
-        upperPercentText.setText(String.valueOf(pm.getInt(PreferenceManager.Settings.WARN_MAX_PERCENT)));
-        lowerPercentText.setText(String.valueOf(pm.getInt(PreferenceManager.Settings.WARN_MIN_PERCENT)));
+        maxPercentText.setText(pm.getInt(PreferenceManager.Settings.ALARM_MAX_PERCENT) + " %");
+        minPercentText.setText(pm.getInt(PreferenceManager.Settings.ALARM_MIN_PERCENT) + " %");
+        upperPercentText.setText(pm.getInt(PreferenceManager.Settings.WARN_MAX_PERCENT) + " %");
+        lowerPercentText.setText(pm.getInt(PreferenceManager.Settings.WARN_MIN_PERCENT) + " %");
     }
 
     public void setListener(View view) {
@@ -127,7 +127,7 @@ public class BatterySettingFragment extends Fragment {
         maxPercentBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                maxPercentText.setText(String.valueOf(progress));
+                maxPercentText.setText(progress  + " %");
             }
 
             @Override
@@ -143,7 +143,7 @@ public class BatterySettingFragment extends Fragment {
         minPercentBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                minPercentText.setText(String.valueOf(progress));
+                minPercentText.setText(progress + " %");
             }
 
             @Override
@@ -159,7 +159,7 @@ public class BatterySettingFragment extends Fragment {
         upperPercentBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                upperPercentText.setText(String.valueOf(progress));
+                upperPercentText.setText(progress + " %");
             }
 
             @Override
@@ -175,7 +175,7 @@ public class BatterySettingFragment extends Fragment {
         lowerPercentBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                lowerPercentText.setText(String.valueOf(progress));
+                lowerPercentText.setText(progress + " %");
             }
 
             @Override

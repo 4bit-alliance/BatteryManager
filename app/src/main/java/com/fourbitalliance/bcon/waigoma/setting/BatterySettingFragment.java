@@ -53,7 +53,7 @@ public class BatterySettingFragment extends Fragment {
         return true;
     }
 
-    public void setSettingsView(View view) {
+    private void setSettingsView(View view) {
         PreferenceManager pm = new PreferenceManager(PreferenceManager.Settings.FILE);
         Switch alarmSw = view.findViewById(R.id.switch_alarm);
         Switch warnSw = view.findViewById(R.id.switch_warn);
@@ -82,7 +82,7 @@ public class BatterySettingFragment extends Fragment {
         lowerPercentText.setText(pm.getInt(PreferenceManager.Settings.WARN_MIN_PERCENT) + " %");
     }
 
-    public void setListener(View view) {
+    private void setListener(View view) {
         PreferenceManager pm = new PreferenceManager(PreferenceManager.Settings.FILE);
         Switch alarmSw = view.findViewById(R.id.switch_alarm);
         Switch warnSw = view.findViewById(R.id.switch_warn);

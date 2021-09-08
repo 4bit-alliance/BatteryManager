@@ -106,8 +106,9 @@
 
                         <TextView
                             android:id="@+id/upper_percent"
-                            android:layout_width="64dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:fontFamily="@font/noto_sans_jp"
                             android:text="最大"
                             android:textColor="?colorPrimary"
@@ -116,15 +117,17 @@
 
                         <SeekBar
                             android:id="@+id/upper_percent_seekBar"
-                            android:layout_width="227dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight="10"
                             android:max="100" />
 
                         <TextView
                             android:id="@+id/upper_percent_text"
-                            android:layout_width="31dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
                             android:text="95"
                             android:textColor="?colorOnPrimary"
                             android:textSize="16sp" />
@@ -137,8 +140,9 @@
 
                         <TextView
                             android:id="@+id/lower_percent"
-                            android:layout_width="64dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:fontFamily="@font/noto_sans_jp"
                             android:text="最小"
                             android:textColor="?colorPrimary"
@@ -147,15 +151,17 @@
 
                         <SeekBar
                             android:id="@+id/lower_percent_seekBar"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight="10"
                             android:max="100" />
 
                         <TextView
                             android:id="@+id/lower_percent_text"
-                            android:layout_width="64dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="right"
                             android:text="5"
                             android:textColor="?colorOnPrimary"
                             android:textSize="16sp" />
@@ -177,13 +183,14 @@
                     android:layout_height="wrap_content">
 
                     <TableRow
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent">
 
                         <TextView
                             android:id="@+id/max_percent"
-                            android:layout_width="64dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:fontFamily="@font/noto_sans_jp"
                             android:text="最大"
                             android:textColor="?colorPrimary"
@@ -192,15 +199,17 @@
 
                         <SeekBar
                             android:id="@+id/max_percent_seekBar"
-                            android:layout_width="228dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight="10"
                             android:max="100" />
 
                         <TextView
                             android:id="@+id/max_percent_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="right"
                             android:text="100"
                             android:textColor="?colorOnPrimary"
                             android:textSize="16sp" />
@@ -213,8 +222,9 @@
 
                         <TextView
                             android:id="@+id/min_percent"
-                            android:layout_width="64dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:fontFamily="@font/noto_sans_jp"
                             android:text="最小"
                             android:textColor="?colorPrimary"
@@ -223,15 +233,17 @@
 
                         <SeekBar
                             android:id="@+id/min_percent_seekBar"
-                            android:layout_width="162dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_weight="10"
                             android:max="100" />
 
                         <TextView
                             android:id="@+id/min_percent_text"
-                            android:layout_width="64dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="right"
                             android:text="0"
                             android:textColor="?colorOnPrimary"
                             android:textSize="16sp" />

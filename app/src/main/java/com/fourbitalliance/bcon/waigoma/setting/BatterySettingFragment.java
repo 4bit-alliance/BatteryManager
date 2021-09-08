@@ -14,11 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.fourbitalliance.bcon.MainActivity;
-import com.fourbitalliance.bcon.MainFragment;
 import com.fourbitalliance.bcon.R;
 import com.fourbitalliance.bcon.waigoma.PreferenceManager;
 
@@ -28,11 +24,6 @@ public class BatterySettingFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // 表示する画面をインフレート
         View view = inflater.inflate(R.layout.bcon_setting, container, false);
-
-        // 所属親アクティビティ取得
-        MainActivity activity = (MainActivity) getActivity();
-        // 戻るボタン
-//        activity.setupBackButton(true);
 
         // アクションバーメニューが使えるようになる
         setHasOptionsMenu(true);

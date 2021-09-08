@@ -1,15 +1,11 @@
 package com.fourbitalliance.bcon;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Build;
 import android.os.Bundle;
-
-import com.fourbitalliance.bcon.waigoma.PreferenceManager;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -21,12 +17,6 @@ public class MainActivity extends AppCompatActivity {
         // MainFragment表示
         if (!isDupFragment()) addFragment(new MainFragment());
     }
-
-    // TODO 戻るボタンを実装したい
-//    public void setupBackButton(boolean enableBackButton) {
-//        ActionBar actionBar = getSupportActionBar();
-//        actionBar.setDisplayHomeAsUpEnabled(enableBackButton);
-//    }
 
     // Fragmentが重ならない努力 (ダークモード切替)
     private boolean isDupFragment() {

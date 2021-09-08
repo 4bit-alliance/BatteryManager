@@ -13,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.fourbitalliance.bcon.MainActivity;
 import com.fourbitalliance.bcon.R;
 
 public class BatteryInfoFragment extends Fragment {
@@ -25,11 +24,6 @@ public class BatteryInfoFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // 表示する画面をインフレート
         View view = inflater.inflate(R.layout.battery_info, container, false);
-
-        // 所属親アクティビティ取得
-        MainActivity activity = (MainActivity) getActivity();
-        // 戻るボタン
-//        activity.setupBackButton(true);
 
         // アクションバーメニューが使えるようになる
         setHasOptionsMenu(true);

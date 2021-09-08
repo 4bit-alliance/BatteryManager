@@ -29,11 +29,6 @@ public class MainFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
-        // 所属している親アクティビティを取得
-        MainActivity activity = (MainActivity) getActivity();
-        // 戻るボタンを消す
-//        activity.setupBackButton(false);
-
         ImageButton infoBt = view.findViewById(R.id.batteryInfoButton);
         ImageButton settingBt = view.findViewById(R.id.batterySettingButton);
 

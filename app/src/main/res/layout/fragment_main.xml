@@ -100,11 +100,37 @@
             android:textColor="@color/normal_text"
             android:textSize="16sp" />
 
-        <Switch
-            android:id="@+id/switch_level_cap"
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="このスイッチで残量と容量を切り替える" />
+            android:layout_marginTop="8dp">
+
+            <Switch
+                android:id="@+id/switch_level_cap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autoText="true"
+                android:thumb="@drawable/info_switch_thumb"
+                android:track="@drawable/info_switch_track" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="残量"
+                android:textColor="#90949F" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:gravity="center"
+                android:text="寿命"
+                android:textColor="#90949F" />
+        </FrameLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

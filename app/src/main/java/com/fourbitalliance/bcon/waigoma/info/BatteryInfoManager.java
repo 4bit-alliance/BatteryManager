@@ -189,8 +189,8 @@ public class BatteryInfoManager {
         return ((counter / percentage) * 100) / 1000;
     }
 
-    public long maxPercentCapacity() {
-        return (maxCapacity() / designCapacity()) * 100;
+    public int maxPercentCapacity() {
+        return (int) (((float) maxCapacity() / designCapacity()) * 100f);
     }
 
     /**

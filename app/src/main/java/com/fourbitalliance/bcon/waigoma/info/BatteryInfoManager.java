@@ -189,6 +189,10 @@ public class BatteryInfoManager {
         return ((counter / percentage) * 100) / 1000;
     }
 
+    public long maxPercentCapacity() {
+        return (maxCapacity() / designCapacity()) * 100;
+    }
+
     /**
      * バッテリー残量 (単位: mAh)
      *

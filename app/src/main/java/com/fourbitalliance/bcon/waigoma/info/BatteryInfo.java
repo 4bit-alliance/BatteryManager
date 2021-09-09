@@ -22,6 +22,7 @@ public class BatteryInfo extends BroadcastReceiver {
         TextView batteryDesignCapacityText = ((AppCompatActivity)context).findViewById(R.id.batteryDesignCapacityText);
         TextView batteryCapacityText = ((AppCompatActivity)context).findViewById(R.id.batteryCapacityText);
         TextView batteryRemainingText = ((AppCompatActivity)context).findViewById(R.id.batteryRemainingText);
+        TextView batteryCapPercentText = ((AppCompatActivity)context).findViewById(R.id.batteryCapPercentText);
 
         BatteryInfoManager batteryInfo = new BatteryInfoManager(intent);
 
@@ -45,5 +46,7 @@ public class BatteryInfo extends BroadcastReceiver {
         batteryCapacityText.setText(batteryInfo.maxCapacity() + " mAh");
         // バッテリー残量
         batteryRemainingText.setText(batteryInfo.remaining() + " mAh");
+        //
+        batteryCapPercentText.setText(batteryInfo.maxPercentCapacity() + " %");
     }
 }

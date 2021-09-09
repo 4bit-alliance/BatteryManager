@@ -32,31 +32,8 @@ public class MainFragment extends Fragment {
         // フラグメントで表示する画面をlayoutファイルからインフレートする
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
-        ImageButton infoBt = view.findViewById(R.id.batteryInfoButton);
-        ImageButton settingBt = view.findViewById(R.id.batterySettingButton);
-        Switch switchLevelCap = view.findViewById(R.id.switch_level_cap);
-
-        // ボタンクリック時の挙動 (バッテリー情報)
-        infoBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                replaceFragment(new BatteryInfoFragment());
-            }
-        });
-
-        settingBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                replaceFragment(new BatterySettingFragment());
-            }
-        });
-        switchLevelCap.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                new PreferenceManager(PreferenceManager.Settings.FILE).editBool(PreferenceManager.Settings.ENABLE_LEVEL, b);
-                batteryReceiver.changeText();
-            }
-        });
+        setView(view);
+        setListener(view);
 
         return view;
     }
@@ -71,6 +48,39 @@ public class MainFragment extends Fragment {
     public void onPause() {
         super.onPause();
         requireActivity().unregisterReceiver(batteryReceiver);
+    }
+
+    private void setView(View view) {
+        Switch switchLevelCap = view.findViewById(R.id.switch_level_cap);
+
+        switchLevelCap.setChecked(new PreferenceManager(PreferenceManager.Settings.FILE).getBool(PreferenceManager.Settings.ENABLE_LEVEL));
+    }
+
+    private void setListener(View view) {
+        ImageButton infoBt = view.findViewById(R.id.batteryInfoButton);
+        ImageButton settingBt = view.findViewById(R.id.batterySettingButton);
+        Switch switchLevelCap = view.findViewById(R.id.switch_level_cap);
+
+        // ボタンクリック時の挙動 (バッテリー情報)
+        infoBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new BatteryInfoFragment());
+            }
+        });
+        settingBt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(new BatterySettingFragment());
+            }
+        });
+        switchLevelCap.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                new PreferenceManager(PreferenceManager.Settings.FILE).editBool(PreferenceManager.Settings.ENABLE_LEVEL, b);
+                batteryReceiver.changeText();
+            }
+        });
     }
 
     // Fragmentを切り替えるメソッド

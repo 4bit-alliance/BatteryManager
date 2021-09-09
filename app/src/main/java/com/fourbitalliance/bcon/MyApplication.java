@@ -30,20 +30,37 @@ public class MyApplication extends Application {
         if (first) ct.setupTheme();
         else ct.setTheme();
 
+        //通知（チャネル作成）
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
 
-            NotificationChannel channel = new NotificationChannel("CHANNEL_ID", "B-CON通知チャネル", importance);
+            NotificationChannel channel = new NotificationChannel("ALARM", "B-CON_ALARMチャネル", importance);
+            NotificationChannel channel2 = new NotificationChannel("WARM", "B-CON_WARMチャネル", importance);
 
-            channel.setDescription("チャネル一覧");
+            channel.setDescription("アラームチャネル");
+            channel2.setDescription("警告チャネル");
+
 
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
+            notificationManager.createNotificationChannel(channel2);
         }
     }
 
-    public void notifyTest() {
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "CHANNEL_ID")
+    public void notifyAlarm() {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "ALARM")
+                .setSmallIcon(R.drawable.notification_icon)
+                .setContentTitle("タイトル")
+                .setContentText("メッセージ・メッセージ")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+
+        notificationManager.notify(R.string.app_name, builder.build());
+    }
+
+    public void notifyWarm(){
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "WARM")
                 .setSmallIcon(R.drawable.notification_icon)
                 .setContentTitle("タイトル")
                 .setContentText("メッセージ・メッセージ")

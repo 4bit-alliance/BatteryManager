@@ -9,11 +9,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fourbitalliance.bcon.MainActivity;
+import com.fourbitalliance.bcon.MyApplication;
 import com.fourbitalliance.bcon.R;
 import com.fourbitalliance.bcon.waigoma.PreferenceManager;
 import com.fourbitalliance.bcon.waigoma.info.BatteryInfoManager;
 
 public class Sample extends BroadcastReceiver {
+
     private Context context;
     private Intent intent;
 

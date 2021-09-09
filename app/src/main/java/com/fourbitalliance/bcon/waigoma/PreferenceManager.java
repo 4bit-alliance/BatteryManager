@@ -15,6 +15,7 @@ public class PreferenceManager {
     public void setup() {
         if (pref.contains(Settings.INITIALIZE)) return;
         SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean(Settings.ENABLE_LEVEL, true);
         editor.putBoolean(Settings.INITIALIZE, true);
         editor.putBoolean(Settings.ENABLE_ALARM, true);
         editor.putBoolean(Settings.ENABLE_WARN, true);
@@ -64,6 +65,7 @@ public class PreferenceManager {
     public static class Settings {
         public final static String FILE = "bcon_settings";
         public final static String INITIALIZE = "initialize";
+        public final static String ENABLE_LEVEL = "enable_level";
         public final static String ENABLE_ALARM = "enable_alarm";
         public final static String ENABLE_WARN = "enable_warn";
         public final static String ALARM_MAX_PERCENT = "alarm_max_percent";

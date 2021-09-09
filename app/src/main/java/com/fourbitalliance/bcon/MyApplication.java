@@ -44,7 +44,7 @@ public class MyApplication extends Application {
 
     public void notifyTest() {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "CHANNEL_ID")
-                .setSmallIcon(android.R.drawable.ic_menu_info_details)
+                .setSmallIcon(R.drawable.notification_icon)
                 .setContentTitle("タイトル")
                 .setContentText("メッセージ・メッセージ")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);

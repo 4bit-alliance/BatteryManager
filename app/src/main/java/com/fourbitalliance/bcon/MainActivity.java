@@ -1,22 +1,11 @@
 package com.fourbitalliance.bcon;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.widget.Button;
-
-import com.fourbitalliance.bcon.waigoma.PreferenceManager;
-import com.fourbitalliance.bcon.waigoma.service.BackgroundManager;
-import com.fourbitalliance.bcon.waigoma.service.MainService;
 
 public class MainActivity extends AppCompatActivity {
     private static MainActivity instance = null;
@@ -31,11 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         // MainFragment表示
         if (!isDupFragment()) addFragment(new MainFragment());
-
-
     }
-
-
 
     // Fragmentが重ならない努力 (ダークモード切替)
     private boolean isDupFragment() {

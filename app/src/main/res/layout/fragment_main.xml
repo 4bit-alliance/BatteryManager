@@ -34,6 +34,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/noto_sans_jp_bold"
             android:gravity="center|center_vertical"
+            android:paddingTop="3dp"
             android:text="バッテリー情報"
             android:textColor="?colorPrimary"
             android:textSize="16sp" />
@@ -49,19 +50,6 @@
             app:srcCompat="@drawable/btn_showsettings"
             tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/batteryState"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/noto_sans_jp"
-        android:text="28h 29m remaining"
-        android:textColor="@color/normal_text"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/switch_level_cap"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/batteryImage" />
 
     <ImageView
         android:id="@+id/batteryImage"
@@ -92,14 +80,31 @@
         app:layout_constraintTop_toTopOf="@+id/batteryImage"
         app:layout_constraintVertical_bias="0.079" />
 
-    <Switch
-        android:id="@+id/switch_level_cap"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="このスイッチで残量と容量を切り替える"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/batteryState" />
+        app:layout_constraintTop_toBottomOf="@+id/batteryImage"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/batteryState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/noto_sans_jp"
+            android:text="28h 29m remaining"
+            android:textColor="@color/normal_text"
+            android:textSize="16sp" />
+
+        <Switch
+            android:id="@+id/switch_level_cap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="このスイッチで残量と容量を切り替える" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

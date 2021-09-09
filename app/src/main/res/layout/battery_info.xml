@@ -40,7 +40,8 @@
                     android:layout_gravity="center_horizontal"
                     android:fontFamily="@font/noto_sans_jp_bold"
                     android:gravity="center|center_vertical"
-                    android:text="バッテリー情報"
+                    android:paddingTop="3dp"
+                    android:text="バッテリー詳細"
                     android:textColor="?colorPrimary"
                     android:textSize="16sp" />
             </FrameLayout>

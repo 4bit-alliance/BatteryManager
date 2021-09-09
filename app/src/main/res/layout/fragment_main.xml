@@ -67,6 +67,7 @@
         android:id="@+id/batteryImage"
         android:layout_width="285dp"
         android:layout_height="357dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintBottom_toTopOf="@+id/batteryState"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

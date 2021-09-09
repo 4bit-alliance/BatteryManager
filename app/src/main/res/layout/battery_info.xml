@@ -366,6 +366,37 @@
                         android:textSize="16sp" />
                 </TableRow>
 
+                <TableRow
+                    android:id="@+id/batteryCapPercentRow"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/cell_radius"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp">
+
+                    <TextView
+                        android:id="@+id/batteryCapPercent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingLeft="16dp"
+                        android:text="CapPercent"
+                        android:textColor="?colorPrimary"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/batteryCapPercentText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:paddingRight="16dp"
+                        android:text="TextView"
+                        android:textColor="?colorOnPrimary"
+                        android:textSize="16sp" />
+                </TableRow>
+
             </TableLayout>
         </LinearLayout>
     </ScrollView>

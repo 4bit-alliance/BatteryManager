@@ -36,6 +36,7 @@ public class MainFragment extends Fragment {
         ImageButton settingBt = view.findViewById(R.id.batterySettingButton);
         Switch switchLevelCap = view.findViewById(R.id.switch_level_cap);
 
+
         // ボタンクリック時の挙動 (バッテリー情報)
         infoBt.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +17,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.fourbitalliance.bcon.nagai.Sample;
+import com.fourbitalliance.bcon.waigoma.PreferenceManager;
 import com.fourbitalliance.bcon.waigoma.info.BatteryInfoFragment;
 import com.fourbitalliance.bcon.waigoma.setting.BatterySettingFragment;
 
@@ -31,6 +34,7 @@ public class MainFragment extends Fragment {
 
         ImageButton infoBt = view.findViewById(R.id.batteryInfoButton);
         ImageButton settingBt = view.findViewById(R.id.batterySettingButton);
+        Switch switchLevelCap = view.findViewById(R.id.switch_level_cap);
 
         // ボタンクリック時の挙動 (バッテリー情報)
         infoBt.setOnClickListener(new View.OnClickListener() {
@@ -44,6 +48,13 @@ public class MainFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 replaceFragment(new BatterySettingFragment());
+            }
+        });
+        switchLevelCap.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                new PreferenceManager(PreferenceManager.Settings.FILE).editBool(PreferenceManager.Settings.ENABLE_LEVEL, b);
+                batteryReceiver.changeText();
             }
         });
 

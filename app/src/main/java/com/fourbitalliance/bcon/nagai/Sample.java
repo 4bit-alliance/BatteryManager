@@ -10,48 +10,73 @@ import android.widget.TextView;
 
 import com.fourbitalliance.bcon.MainActivity;
 import com.fourbitalliance.bcon.R;
+import com.fourbitalliance.bcon.waigoma.PreferenceManager;
+import com.fourbitalliance.bcon.waigoma.info.BatteryInfoManager;
 
 public class Sample extends BroadcastReceiver {
+    private Context context;
+    private Intent intent;
+
     @Override
     public void onReceive(Context context, Intent intent) {
-        TextView batterylevel = ((MainActivity)context).findViewById(R.id.batteryLevel);
-        TextView batterystate = ((MainActivity)context).findViewById(R.id.batteryState);
+        this.context = context;
+        this.intent = intent;
+        changeText();
+    }
+
+    public void changeText() {
+        TextView batteryLevel = ((MainActivity)context).findViewById(R.id.batteryLevel);
+        TextView batteryState = ((MainActivity)context).findViewById(R.id.batteryState);
         ImageView batteryImage = ((MainActivity)context).findViewById(R.id.batteryImage);
 
         String action = intent.getAction();
 
         if (action != null && action.equals(Intent.ACTION_BATTERY_CHANGED)) {
-            // バッテリー情報を取得
-
-            int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
-            String message = "";
-
-            switch (status) {
-                case BatteryManager.BATTERY_STATUS_FULL:
-                    message = "充電完了";
-                    break;
-                case BatteryManager.BATTERY_STATUS_CHARGING:
-                    message = "充電中";
-                    break;
-                case BatteryManager.BATTERY_STATUS_DISCHARGING:
-                    message = "放電中";
-                    break;
-                case BatteryManager.BATTERY_STATUS_NOT_CHARGING:
-                    message = "充電していません";
-                    break;
-                case BatteryManager.BATTERY_STATUS_UNKNOWN:
-                    message = "不明";
-                    break;
-            }
-            batterystate.setText(message);
+            PreferenceManager pm = new PreferenceManager(PreferenceManager.Settings.FILE);
+            BatteryInfoManager bim = new BatteryInfoManager(intent);
 
             // バッテリー残量
-            int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
-            int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
-            int percentage = level * 100 / scale;
-            batterylevel.setText(percentage + "%");
-            ViewGroup.LayoutParams lp = batterylevel.getLayoutParams();
-            ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams)lp;
+            int percentage = -1;
+            if (pm.getBool(PreferenceManager.Settings.ENABLE_LEVEL)) {
+                percentage = bim.level();
+                // バッテリー情報を取得
+                int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+                String message = "";
+
+                switch (status) {
+                    case BatteryManager.BATTERY_STATUS_FULL:
+                        message = "充電完了";
+                        break;
+                    case BatteryManager.BATTERY_STATUS_CHARGING:
+                        message = "充電中";
+                        break;
+                    case BatteryManager.BATTERY_STATUS_DISCHARGING:
+                        message = "放電中";
+                        break;
+                    case BatteryManager.BATTERY_STATUS_NOT_CHARGING:
+                        message = "充電していません";
+                        break;
+                    case BatteryManager.BATTERY_STATUS_UNKNOWN:
+                        message = "不明";
+                        break;
+                }
+                batteryState.setText(message);
+                batteryLevel.setText(percentage + "%");
+            } else {
+                percentage = bim.maxPercentCapacity();
+                long maxPercentCap = bim.maxPercentCapacity();
+                batteryLevel.setText(maxPercentCap + " %");
+
+                if (maxPercentCap >= 80) {
+                    batteryState.setText("正常です");
+                } else {
+                    batteryState.setText("劣化しています");
+                }
+
+            }
+
+            ViewGroup.LayoutParams lp = batteryLevel.getLayoutParams();
+            ViewGroup.MarginLayoutParams mlp = (ViewGroup.MarginLayoutParams) lp;
 
 
             // 画像を表示
@@ -72,8 +97,8 @@ public class Sample extends BroadcastReceiver {
                 mlp.setMargins(0, 210, 0, 0);
 
             } else if (percentage > 60) {
-                    batteryImage.setImageResource(R.drawable.bat_60);
-                    mlp.setMargins(0,280,0,0);
+                batteryImage.setImageResource(R.drawable.bat_60);
+                mlp.setMargins(0,280,0,0);
 
             } else if (percentage > 50) {
                 batteryImage.setImageResource(R.drawable.bat_50);
@@ -101,7 +126,7 @@ public class Sample extends BroadcastReceiver {
 
             }
 
-            batterylevel.setLayoutParams(mlp);
+            batteryLevel.setLayoutParams(mlp);
 
         }
     }

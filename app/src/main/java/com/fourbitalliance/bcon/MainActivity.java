@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,11 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         // MainFragment表示
         if (!isDupFragment()) addFragment(new MainFragment());
-
-
     }
-
-
 
     // Fragmentが重ならない努力 (ダークモード切替)
     private boolean isDupFragment() {

@@ -20,6 +20,11 @@ public class BatteryInfoManager {
      *
      * @return int バッテリー残量 (%)
      */
+    public int batteryLevel(){
+        int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
+        return level;
+    }
+
     public int level() {
         int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
         int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);

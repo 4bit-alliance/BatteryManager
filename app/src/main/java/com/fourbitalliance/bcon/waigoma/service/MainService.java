@@ -56,7 +56,7 @@ public class MainService extends Service {
     private void checkBatteryLevel (Intent intent) {
         BatteryInfoManager bim = new BatteryInfoManager(intent);
         NotifyManager nm = new NotifyManager();
-        nm.setNotifyText(builder, bim.level() + " %", id);
+        nm.setNotifyText(builder, bim.batteryLevel() + " %", id);
     }
 
     @Nullable

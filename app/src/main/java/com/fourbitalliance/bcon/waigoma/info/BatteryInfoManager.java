@@ -189,6 +189,11 @@ public class BatteryInfoManager {
         return ((counter / percentage) * 100) / 1000;
     }
 
+    /**
+     * バッテリーの寿命を表す % , 現在の最大容量 / 出荷時の最大容量
+     *
+     * @return int
+     */
     public int maxPercentCapacity() {
         return (int) (((float) maxCapacity() / designCapacity()) * 100f);
     }

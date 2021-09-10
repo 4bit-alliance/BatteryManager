@@ -1,6 +1,7 @@
 package com.fourbitalliance.bcon.nagai.notification;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
+import static android.content.Intent.getIntentOld;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -8,8 +9,11 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Build;
+import android.util.AndroidException;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -63,6 +67,7 @@ public class NotifyManager {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(myApplication, Channel.ALARM)
                 .setSmallIcon(R.drawable.notification_icon)
+                .setLargeIcon(BitmapFactory.decodeResource(myApplication.getResources(), R.drawable.alarm))
                 .setContentTitle("警告アラーム")
                 .setContentText(text)
                 .setColor(Color.GREEN)
@@ -87,6 +92,7 @@ public class NotifyManager {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(myApplication, Channel.WARN)
                 .setSmallIcon(R.drawable.notification_icon)
+                .setLargeIcon(BitmapFactory.decodeResource(myApplication.getResources(), R.drawable.noti))
                 .setContentTitle("通知")
                 .setContentText(text)
                 .setColor(Color.GREEN)

@@ -1,6 +1,10 @@
 package com.fourbitalliance.bcon.nagai.notification;
 
+import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
+
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -26,13 +30,18 @@ public class NotifyManager {
      */
     public void createChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            int importanceDef = android.app.NotificationManager.IMPORTANCE_DEFAULT;
-            int importanceLow = android.app.NotificationManager.IMPORTANCE_LOW;
+            int importanceHigh = NotificationManager.IMPORTANCE_HIGH;
+            int importanceDef = NotificationManager.IMPORTANCE_DEFAULT;
+            int importanceLow = NotificationManager.IMPORTANCE_LOW;
             String title = myApplication.getString(R.string.app_name);
 
             android.app.NotificationChannel channelBg = new android.app.NotificationChannel(Channel.DEFAULT, title, importanceLow);
-            android.app.NotificationChannel channel = new android.app.NotificationChannel(Channel.ALARM, title + "_ALARMチャネル", importanceDef);
-            android.app.NotificationChannel channel2 = new android.app.NotificationChannel(Channel.WARN, title + "_WARMチャネル", importanceDef);
+            android.app.NotificationChannel channel = new android.app.NotificationChannel(Channel.ALARM, title + "_ALARMチャネル", importanceHigh);
+            android.app.NotificationChannel channel2 = new android.app.NotificationChannel(Channel.WARN, title + "_WARMチャネル", importanceHigh);
+
+            channel.enableVibration(true);
+            channel2.enableVibration(true);
+
 
             channel.setDescription("アラームチャネル");
             channel2.setDescription("警告チャネル");
@@ -50,7 +59,7 @@ public class NotifyManager {
      */
     public void notifyAlarm(String text) {
         Intent intent = new Intent();
-        PendingIntent pendingIntent = PendingIntent.getActivity(myApplication, 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(myApplication, 0, intent, PendingIntent.FLAG_ONE_SHOT);
         PreferenceManager pm = new PreferenceManager(PreferenceManager.Settings.FILE);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(myApplication, Channel.ALARM)
@@ -61,8 +70,10 @@ public class NotifyManager {
                 .setContentIntent(pendingIntent)
                 //.setDefaults(Notification.DEFAULT_LIGHTS)
                 //.setLights(Color.BLUE, 1000, 3000)
+                .setWhen(System.currentTimeMillis())
                 .setAutoCancel(true)
-                .setPriority(NotificationCompat.PRIORITY_HIGH);
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setFullScreenIntent(pendingIntent, true);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(myApplication);
 
@@ -75,18 +86,21 @@ public class NotifyManager {
      */
     public void notifyWarn(String text){
         Intent intent = new Intent();
-        PendingIntent pendingIntent = PendingIntent.getActivity(myApplication, 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(myApplication, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(myApplication, Channel.WARN)
                 .setSmallIcon(R.drawable.notification_icon)
                 .setContentTitle("通知")
                 .setContentText(text)
                 .setColor(Color.GREEN)
+                .setDefaults(Notification.DEFAULT_ALL)
                 .setContentIntent(pendingIntent)
                 //.setDefaults(Notification.DEFAULT_LIGHTS)
                 //.setLights(Color.BLUE, 1000, 3000)
                 .setAutoCancel(true)
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setFullScreenIntent(pendingIntent, true)
+                .setVibrate(new long[]{100, 0, 100, 0, 100, 0});
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(myApplication);
 

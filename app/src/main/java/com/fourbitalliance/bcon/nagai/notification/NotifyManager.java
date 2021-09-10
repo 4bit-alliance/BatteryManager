@@ -16,10 +16,15 @@ import com.fourbitalliance.bcon.MyApplication;
 import com.fourbitalliance.bcon.R;
 import com.fourbitalliance.bcon.waigoma.PreferenceManager;
 
+/**
+ * 通知を飛ばすために使うクラス
+ */
 public class NotifyManager {
     private final MyApplication myApplication = MyApplication.getInstance();
-    private Notification.Builder notifyService;
 
+    /**
+     * チャネル初期設定
+     */
     public void createChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             int importanceDef = android.app.NotificationManager.IMPORTANCE_DEFAULT;
@@ -40,6 +45,10 @@ public class NotifyManager {
         }
     }
 
+    /**
+     * ALARMチャネルを使ってアラーム通知を送れる <br>
+     * 使い方 new NotifyManager().notifyAlarm()
+     */
     public void notifyAlarm() {
         Intent intent = new Intent();
         PendingIntent pendingIntent = PendingIntent.getActivity(myApplication, 0, intent, 0);
@@ -61,7 +70,11 @@ public class NotifyManager {
         notificationManager.notify(R.string.app_name, builder.build());
     }
 
-    public void notifyWarm(){
+    /**
+     * ALARMチャネルを使ってアラーム通知を送れる<br>
+     * 使い方 new NotifyManager().notifyWarn()
+     */
+    public void notifyWarn(){
         Intent intent = new Intent();
         PendingIntent pendingIntent = PendingIntent.getActivity(myApplication, 0, intent, 0);
 
@@ -81,9 +94,16 @@ public class NotifyManager {
         notificationManager.notify(R.string.app_name, builder.build());
     }
 
+    /**
+     * Service 用通知
+     *
+     * @param intent Intent
+     * @return Notification.Builder
+     */
     public Notification.Builder notifyService(Intent intent) {
         int requestCode = intent.getIntExtra("REQUEST_CODE", 0);
         Context context = myApplication.getApplicationContext();
+        Notification.Builder notifyService = null;
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             PendingIntent pendingIntent =

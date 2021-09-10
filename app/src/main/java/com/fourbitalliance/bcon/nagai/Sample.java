@@ -93,7 +93,7 @@ public class Sample extends BroadcastReceiver {
                 } else if (percentage > 90) {
                     batteryImage.setImageResource(R.drawable.bat_90);
                     mlp.setMargins(0, 70,0,0);
-                    new NotifyManager().notifyWarm();
+                    new NotifyManager().notifyWarn();
 
                 } else if (percentage > 80) {
                     batteryImage.setImageResource(R.drawable.bat_80);

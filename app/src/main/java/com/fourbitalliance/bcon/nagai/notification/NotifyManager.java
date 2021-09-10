@@ -42,7 +42,6 @@ public class NotifyManager {
             channel.enableVibration(true);
             channel2.enableVibration(true);
 
-
             channel.setDescription("アラームチャネル");
             channel2.setDescription("警告チャネル");
 
@@ -70,7 +69,8 @@ public class NotifyManager {
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
-                .setFullScreenIntent(pendingIntent, true);
+                .setFullScreenIntent(pendingIntent, true)
+                .setVibrate(new long[]{100, 0, 100, 0, 100, 0});;
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(myApplication);
 

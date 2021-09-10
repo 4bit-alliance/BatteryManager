@@ -7,6 +7,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+import com.fourbitalliance.bcon.waigoma.PreferenceManager;
+import com.fourbitalliance.bcon.waigoma.service.BackgroundManager;
+import com.fourbitalliance.bcon.waigoma.service.MainService;
+
 public class MainActivity extends AppCompatActivity {
     private static MainActivity instance = null;
 
@@ -20,6 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
         // MainFragment表示
         if (!isDupFragment()) addFragment(new MainFragment());
+
+        // バックグラウンドサービス設定
+        if (new PreferenceManager(PreferenceManager.Settings.FILE).getBool(PreferenceManager.Settings.BACKGROUND) && !MainService.isRunning()) {
+            BackgroundManager bm = new BackgroundManager();
+            bm.enable(this);
+        }
     }
 
     // Fragmentが重ならない努力 (ダークモード切替)

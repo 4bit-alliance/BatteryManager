@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fourbitalliance.bcon.MainActivity;
-import com.fourbitalliance.bcon.MyApplication;
 import com.fourbitalliance.bcon.R;
 import com.fourbitalliance.bcon.nagai.notification.NotifyManager;
 import com.fourbitalliance.bcon.waigoma.PreferenceManager;

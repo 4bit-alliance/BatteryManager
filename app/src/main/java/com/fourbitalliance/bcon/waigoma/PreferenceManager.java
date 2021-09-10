@@ -20,9 +20,9 @@ public class PreferenceManager {
         editor.putBoolean(Settings.ENABLE_ALARM, true);
         editor.putBoolean(Settings.ENABLE_WARN, true);
         editor.putInt(Settings.ALARM_MAX_PERCENT, 100);
-        editor.putInt(Settings.ALARM_MIN_PERCENT, 0);
+        editor.putInt(Settings.ALARM_MIN_PERCENT, 5);
         editor.putInt(Settings.WARN_MAX_PERCENT, 95);
-        editor.putInt(Settings.WARN_MIN_PERCENT, 5);
+        editor.putInt(Settings.WARN_MIN_PERCENT, 15);
         editor.putBoolean(Settings.DARK_MODE, false);
         editor.putBoolean(Settings.BACKGROUND, false);
         editor.apply();

@@ -3,6 +3,9 @@ package com.fourbitalliance.bcon;
 import android.app.Application;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
@@ -44,15 +47,23 @@ public class MyApplication extends Application {
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
             notificationManager.createNotificationChannel(channel2);
+
+
         }
     }
 
     public void notifyAlarm() {
+        Intent intent = new Intent();
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "ALARM")
                 .setSmallIcon(R.drawable.notification_icon)
-                .setContentTitle("タイトル")
-                .setContentText("メッセージ・メッセージ")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                .setContentTitle("警告アラーム")
+                .setContentText("メッセージ：バッテリー残量が100%になりました。")
+                .setColor(Color.GREEN)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
+                .setPriority(NotificationCompat.PRIORITY_HIGH);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
 
@@ -60,10 +71,16 @@ public class MyApplication extends Application {
     }
 
     public void notifyWarm(){
+        Intent intent = new Intent();
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "WARM")
                 .setSmallIcon(R.drawable.notification_icon)
-                .setContentTitle("タイトル")
-                .setContentText("メッセージ・メッセージ")
+                .setContentTitle("充電完了")
+                .setContentText("メッセージ：十分なバッテリー残量になりました。")
+                .setColor(Color.GREEN)
+                .setContentIntent(pendingIntent)
+                .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);

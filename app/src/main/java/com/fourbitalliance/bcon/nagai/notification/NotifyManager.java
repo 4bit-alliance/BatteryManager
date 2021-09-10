@@ -48,7 +48,7 @@ public class NotifyManager {
      * ALARMチャネルを使ってアラーム通知を送れる <br>
      * 使い方 new NotifyManager().notifyAlarm()
      */
-    public void notifyAlarm() {
+    public void notifyAlarm(String text) {
         Intent intent = new Intent();
         PendingIntent pendingIntent = PendingIntent.getActivity(myApplication, 0, intent, 0);
         PreferenceManager pm = new PreferenceManager(PreferenceManager.Settings.FILE);
@@ -56,7 +56,7 @@ public class NotifyManager {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(myApplication, Channel.ALARM)
                 .setSmallIcon(R.drawable.notification_icon)
                 .setContentTitle("警告アラーム")
-                .setContentText("メッセージ：バッテリー残量が100%になりました。")
+                .setContentText(text)
                 .setColor(Color.GREEN)
                 .setContentIntent(pendingIntent)
                 //.setDefaults(Notification.DEFAULT_LIGHTS)
@@ -73,14 +73,14 @@ public class NotifyManager {
      * ALARMチャネルを使ってアラーム通知を送れる<br>
      * 使い方 new NotifyManager().notifyWarn()
      */
-    public void notifyWarn(){
+    public void notifyWarn(String text){
         Intent intent = new Intent();
         PendingIntent pendingIntent = PendingIntent.getActivity(myApplication, 0, intent, 0);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(myApplication, Channel.WARN)
                 .setSmallIcon(R.drawable.notification_icon)
-                .setContentTitle("充電完了")
-                .setContentText("メッセージ：十分なバッテリー残量になりました。")
+                .setContentTitle("通知")
+                .setContentText(text)
                 .setColor(Color.GREEN)
                 .setContentIntent(pendingIntent)
                 //.setDefaults(Notification.DEFAULT_LIGHTS)
@@ -111,7 +111,8 @@ public class NotifyManager {
             notifyService = new Notification.Builder(context, Channel.DEFAULT)
                     .setSmallIcon(R.drawable.notification_icon)
                     .setColor(Color.GREEN)
-                    .setContentText("Background稼働中")
+                    .setContentTitle("B-CON background")
+                    .setContentText("バッテリー残量")
                     .setAutoCancel(true)
                     .setContentIntent(pendingIntent)
                     .setWhen(System.currentTimeMillis())
@@ -120,11 +121,11 @@ public class NotifyManager {
         return notifyService;
     }
 
-    public void setNotifyText(Notification.Builder builder, String text) {
+    public void setNotifyText(Notification.Builder builder, String text, int id) {
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(myApplication);
         builder.setContentText(text).build();
 
-        notificationManager.notify(1, builder.build());
+        notificationManager.notify(id, builder.build());
     }
 
     public static class Channel {

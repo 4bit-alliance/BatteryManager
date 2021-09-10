@@ -1,6 +1,7 @@
 package com.fourbitalliance.bcon;
 
 import android.app.Application;
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -62,6 +63,8 @@ public class MyApplication extends Application {
                 .setContentText("メッセージ：バッテリー残量が100%になりました。")
                 .setColor(Color.GREEN)
                 .setContentIntent(pendingIntent)
+                //.setDefaults(Notification.DEFAULT_LIGHTS)
+                //.setLights(Color.BLUE, 1000, 3000)
                 .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_HIGH);
 
@@ -80,6 +83,8 @@ public class MyApplication extends Application {
                 .setContentText("メッセージ：十分なバッテリー残量になりました。")
                 .setColor(Color.GREEN)
                 .setContentIntent(pendingIntent)
+                //.setDefaults(Notification.DEFAULT_LIGHTS)
+                //.setLights(Color.BLUE, 1000, 3000)
                 .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 

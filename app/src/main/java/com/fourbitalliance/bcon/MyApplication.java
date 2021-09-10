@@ -13,7 +13,7 @@ import android.os.Build;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import com.fourbitalliance.bcon.nagai.notification.NotificationBattery;
+import com.fourbitalliance.bcon.nagai.notification.NotifyManager;
 import com.fourbitalliance.bcon.waigoma.PreferenceManager;
 import com.fourbitalliance.bcon.waigoma.setting.ChangeTheme;
 
@@ -37,7 +37,7 @@ public class MyApplication extends Application {
         else ct.setTheme();
 
         //通知（チャネル作成）
-        NotificationBattery nm = new NotificationBattery();
+        NotifyManager nm = new NotifyManager();
         nm.createChannel();
 //        createChannel();
     }

@@ -16,7 +16,7 @@ import com.fourbitalliance.bcon.MyApplication;
 import com.fourbitalliance.bcon.R;
 import com.fourbitalliance.bcon.waigoma.PreferenceManager;
 
-public class NotificationBattery {
+public class NotifyManager {
     private final MyApplication myApplication = MyApplication.getInstance();
     private Notification.Builder notifyService;
 

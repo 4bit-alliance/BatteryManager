@@ -95,7 +95,8 @@ public class NotifyManager {
                     .setContentText("Background稼働中")
                     .setAutoCancel(true)
                     .setContentIntent(pendingIntent)
-                    .setWhen(System.currentTimeMillis());
+                    .setWhen(System.currentTimeMillis())
+                    .setStyle(new Notification.InboxStyle());
         }
         return notifyService;
     }

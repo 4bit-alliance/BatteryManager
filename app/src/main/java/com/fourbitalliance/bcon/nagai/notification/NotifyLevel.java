@@ -24,10 +24,13 @@ public class NotifyLevel {
         // WARNレベルの内側
         if (minWarnLevel < currentLevel && currentLevel < maxWarnLevel) return;
 
-        if (maxWarnLevel == currentLevel) notifyManager.notifyWarn("メッセージ：十分なバッテリー残量になりました。");
-        // 充電中なら出さない
-        if (batteryInfoManager.isCharging()) return;
-        if (minWarnLevel == currentLevel) notifyManager.notifyWarn("メッセージ：バッテリー残量が減ってきています。");
+        if (batteryInfoManager.isCharging()) {
+            // 充電中
+            if (maxWarnLevel == currentLevel) notifyManager.notifyWarn("メッセージ：十分なバッテリー残量になりました。");
+        } else {
+            // 充電してないとき
+            if (minWarnLevel == currentLevel) notifyManager.notifyWarn("メッセージ：バッテリー残量が減ってきています。");
+        }
     }
 
     public void alarm() {
@@ -40,9 +43,12 @@ public class NotifyLevel {
         // WARNレベルの内側
         if (minAlarmLevel < currentLevel && currentLevel < maxAlarmLevel) return;
 
-        if (maxAlarmLevel == currentLevel) notifyManager.notifyAlarm("メッセージ：バッテリー残量が" + maxAlarmLevel + "%になりました。");
-        // 充電中なら出さない
-        if (batteryInfoManager.isCharging()) return;
-        if (minAlarmLevel == currentLevel) notifyManager.notifyAlarm("メッセージ：バッテリー残量が" + minAlarmLevel + "%になりました。");
+        if (batteryInfoManager.isCharging()) {
+            // 充電中
+            if (maxAlarmLevel == currentLevel) notifyManager.notifyAlarm("メッセージ：バッテリー残量が" + maxAlarmLevel + "%になりました。");
+        } else {
+            // 充電してないとき
+            if (minAlarmLevel == currentLevel) notifyManager.notifyAlarm("メッセージ：バッテリー残量が" + minAlarmLevel + "%になりました。");
+        }
     }
 }

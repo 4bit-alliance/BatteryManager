@@ -10,14 +10,12 @@ import android.widget.TextView;
 
 import com.fourbitalliance.bcon.MainActivity;
 import com.fourbitalliance.bcon.R;
-import com.fourbitalliance.bcon.nagai.notification.NotifyManager;
+import com.fourbitalliance.bcon.nagai.notification.NotifyLevel;
 import com.fourbitalliance.bcon.waigoma.PreferenceManager;
 import com.fourbitalliance.bcon.waigoma.info.BatteryInfoManager;
 import com.fourbitalliance.bcon.waigoma.service.MainService;
 
 public class Sample extends BroadcastReceiver {
-    MainService main = new MainService();
-
     private Context context;
     private Intent intent;
 
@@ -26,6 +24,11 @@ public class Sample extends BroadcastReceiver {
         this.context = context;
         this.intent = intent;
         changeText();
+        if (!MainService.isRunning()) {
+            NotifyLevel nl = new NotifyLevel(intent);
+            nl.alarm();
+            nl.warn();
+        }
     }
 
     public void changeText() {

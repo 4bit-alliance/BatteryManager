@@ -27,7 +27,7 @@ public class PreferenceManager {
         editor.putInt(Settings.WARN_MAX_PERCENT, 95);
         editor.putInt(Settings.WARN_MIN_PERCENT, 15);
         editor.putBoolean(Settings.DARK_MODE, false);
-        editor.putBoolean(Settings.BACKGROUND, false);
+        editor.putBoolean(Settings.BACKGROUND, true);
         editor.apply();
     }
 
